@@ -85,7 +85,7 @@ tools/            script build và kiểm tra
 | T1.1 | Thu thập và xác minh văn bản VN: Luật BVMT 2020 (các điều về EPR), NĐ 08/2022/NĐ-CP và mọi nghị định sửa đổi, quyết định của Thủ tướng về định mức đóng góp, tỷ lệ và quy cách tái chế pin | `00-management/source-log.csv`, `02-regulatory/README.md` |
 | T1.2 | Thu thập EU 2023/1542 (bản hợp nhất) và các văn bản hướng dẫn về tỷ lệ thu gom, hàm lượng tái chế, dấu vết carbon, battery passport | mục SRC |
 | T1.3 | Thu thập hướng dẫn nội dung và mô hình dữ liệu của Battery Pass consortium | mục SRC |
-| T1.4 | Xác nhận tên cơ quan quản lý hiện hành sau đợt hợp nhất bộ năm 2025, ghi vào thuật ngữ | `glossary.md` |
+| T1.4 | Xác nhận tên cơ quan quản lý hiện hành sau đợt hợp nhất bộ năm 2025, ghi vào thuật ngữ | `00-management/glossary.md` |
 | T1.5 | Bóc tách yêu cầu EPR VN: mỗi nghĩa vụ một dòng, trích nguyên văn, điều khoản, chủ thể, thời hạn, bằng chứng phải nộp | `02-regulatory/req-extraction-vn.csv` |
 | T1.6 | Bóc tách yêu cầu EU 2023/1542 theo cùng chủ đề (thu gom, thu hồi, hiệu suất tái chế, thu hồi vật liệu, đời thứ hai, thẩm định chuỗi cung ứng, passport, nhãn) | `02-regulatory/req-extraction-eu.csv` |
 | T1.7 | Dựng ma trận tuân thủ VN × EU: chủ đề, quy định VN, tham chiếu EU, khoảng cách, chấm ⛔ (thiếu/chặn) · ⚠️ (yếu/mơ hồ) · ✏️ (chỉ lệch câu chữ/dữ liệu), tác động lên nền tảng | **S6** `02-regulatory/S6-compliance-matrix.md` |
@@ -115,9 +115,9 @@ tools/            script build và kiểm tra
 | T2.1 | Kiểm kê nguồn dữ liệu (IEA GEVO + EV Data Explorer, VinFast 20-F/6-K, VAMA, GSO, World Bank, GIZ, ICCT, báo chí): độ phủ, độ chi tiết, giấy phép | **S8** `03-forecast/S8-data-inventory.md` |
 | T2.2 | Tải và lưu dữ liệu thô bằng script (không commit dữ liệu thô) | `tools/fetch_sources.py` (thư mục raw không commit) |
 | T2.3 | Dựng chuỗi doanh số 2015–2025: e2W (tách axit-chì / Li-ion) và ô tô điện; tam giác hóa 2–3 nguồn mỗi năm thành min/likely/max | `03-forecast/model/params.py` (E2W_HIST, CAR_HIST); S8 §2–3 |
-| T2.4 | Chiếu doanh số 2026–2035 theo 3 kịch bản (Chậm · Cơ sở · Nhanh), dựa trên giả định chính sách (hạn chế xe xăng nội đô, ưu đãi) | `params.py` (E2W_SCEN, CAR_SCEN); ASM-06, ASM-19 |
-| T2.5 | Gán tỷ trọng hóa học pin (LFP · NMC · axit-chì), dung lượng (kWh) và khối lượng pack (kg) theo loại xe và năm | `params.py` (PACK, LI_SHARE); S8 §5 |
-| T2.6 | Tổng quan tài liệu về tuổi thọ pin: tham số Weibull theo hóa học và loại xe; tỷ lệ đủ điều kiện đời thứ hai theo SoH | `params.py` (BATT_LIFE, VEH_LIFE, SECOND_LIFE); S9 §2 |
+| T2.4 | Chiếu doanh số 2026–2035 theo 3 kịch bản (Chậm · Cơ sở · Nhanh), dựa trên giả định chính sách (hạn chế xe xăng nội đô, ưu đãi) | `03-forecast/model/params.py` (E2W_SCEN, CAR_SCEN); ASM-06, ASM-19 |
+| T2.5 | Gán tỷ trọng hóa học pin (LFP · NMC · axit-chì), dung lượng (kWh) và khối lượng pack (kg) theo loại xe và năm | `03-forecast/model/params.py` (PACK, LI_SHARE); S8 §5 |
+| T2.6 | Tổng quan tài liệu về tuổi thọ pin: tham số Weibull theo hóa học và loại xe; tỷ lệ đủ điều kiện đời thứ hai theo SoH | `03-forecast/model/params.py` (BATT_LIFE, VEH_LIFE, SECOND_LIFE); S9 §2 |
 | T2.7 | Dựng mô hình cohort × Weibull: số pin, tấn, GWh hết hạn mỗi năm 2025–2035 theo loại xe × hóa học × kịch bản | `03-forecast/model/forecast.py` |
 | T2.8 | Unit test mô hình (cân bằng khối lượng: bán ra = đang dùng + đã hết hạn; kiểm tra hàm CDF Weibull) | `tests/test_forecast.py` |
 | T2.9 | Thu thập công suất tái chế hiện có tại VN (cơ sở có phép, tấn/năm), ghi dạng khoảng | ASM-12; DEC-07 |
@@ -136,7 +136,7 @@ tools/            script build và kiểm tra
 | T3.4 | Định lượng phần không quan sát được: thu gom phi chính thức dạng khoảng, trình bày như một phát hiện | **S11** §4 |
 | T3.5 | Bảng độ vênh giữa các nguồn (cùng chỉ số, khác nguồn) | **S11** §5 |
 | T3.6 | Giới hạn của phân tích và điều kiện làm đổi kết luận | **S11** §6 |
-| T3.7 | **M2**: đóng băng phiên bản dự báo, gắn tag repo | DEC-xx, tag `forecast-v1` |
+| T3.7 | **M2**: đóng băng phiên bản dự báo, gắn tag repo | DEC-10, git tag `forecast-v1` |
 
 ### P4 · Thiết kế giải pháp
 
@@ -172,7 +172,7 @@ tools/            script build và kiểm tra
 |---|---|---|
 | T4.17 | Epic, user story kèm AC Given/When/Then; trạng thái màn hình (trống, đang tải, lỗi, mất mạng ở đại lý) | **S16** `04-solution/S16-backlog.md` |
 | T4.18 | Story map, cắt MVP; ưu tiên bằng MoSCoW + WSJF | `04-solution/S16-story-map.md` |
-| T4.19 | User flow và wireframe cho 6 màn lõi | `04-solution/screens/` (ảnh prototype) |
+| T4.19 | User flow và wireframe cho 6 màn lõi | `04-solution/user-flows.md`, `04-solution/screens/` |
 | T4.20 | Prototype HTML click được: tra cứu sổ đăng ký, tiếp nhận thu hồi, đánh giá SoH kèm độ tin cậy mô hình, duyệt điều phối, dashboard EPR, xem passport | **S19** `docs/prototype/` |
 | T4.21 | Dữ liệu giả lập: sổ đăng ký pin và giao dịch thu hồi sinh từ phân phối của mô hình dự báo (ghi rõ synthetic) | `04-solution/synthetic/` |
 
@@ -205,7 +205,7 @@ tools/            script build và kiểm tra
 | Mã | Việc | Đầu ra |
 |---|---|---|
 | T5.1 | Sản lượng của khách hàng: thị phần e2W × dự báo → số pin phải thu hồi mỗi năm | `07-business-case/outputs/yearly_likely.csv` |
-| T5.2 | Động lực chi phí/doanh thu từng phương án: (A) tự tái chế / tự dựng mạng thu hồi, (B) đóng quỹ EPR, (C) tham gia PRO; cộng doanh thu đời thứ hai | `07-business-case/cost-model.xlsx`, `model.py` |
+| T5.2 | Động lực chi phí/doanh thu từng phương án: (A) tự tái chế / tự dựng mạng thu hồi, (B) đóng quỹ EPR, (C) tham gia PRO; cộng doanh thu đời thứ hai | `07-business-case/cost-model.xlsx`, `07-business-case/model.py` |
 | T5.3 | NPV, năm hòa vốn, thời gian hoàn vốn theo phương án và kịch bản | **S21** `07-business-case/S21-business-case.md` |
 | T5.4 | Ma trận quyết định có trọng số (chi phí, rủi ro tuân thủ, thương hiệu, quyền kiểm soát dữ liệu, khả năng mở rộng) | S21 §5 |
 | T5.5 | "Khi nào không đáng làm": ngưỡng mà mỗi phương án thua | S21 §7 |

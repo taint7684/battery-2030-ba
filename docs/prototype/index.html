@@ -4,20 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Battery 2030 — Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="top">
-  <div class="brand"><span class="logo" aria-hidden="true">B</span><div><b>Battery 2030</b><small>Nền tảng vòng đời pin · VELIX (giả định)</small></div></div>
+  <a class="brand" href="#/" aria-label="Battery 2030 — về trang đầu">
+    <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="6" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="19.5" y="9.5" width="2" height="5" rx="1" fill="currentColor"/><path d="M11.5 8.5 8.5 12.5h3l-1 3.5 3.5-4.5h-3l1-3z" fill="currentColor"/></svg></span>
+    <span><b>Battery 2030</b><small>Vòng đời pin · VELIX (giả định)</small></span>
+  </a>
   <div class="who">
-    <label>Người dùng (demo)
-      <select id="user" data-testid="user-select"></select>
-    </label>
-    <label class="net"><input type="checkbox" id="offline" data-testid="offline-toggle"> Mất kết nối</label>
-    <button type="button" id="reset" class="ghost" data-testid="reset">Đặt lại dữ liệu</button>
+    <label class="net" title="Mô phỏng thiết bị đại lý mất mạng"><input type="checkbox" id="offline" data-testid="offline-toggle"><span class="switch" aria-hidden="true"></span> Mất kết nối</label>
+    <button type="button" id="reset" class="ghost sm" data-testid="reset" title="Khôi phục dữ liệu mẫu ban đầu">↺ Đặt lại dữ liệu</button>
+    <div class="user">
+      <span class="avatar" id="avatar" aria-hidden="true"></span>
+      <label class="sr" for="user">Người dùng (demo)</label>
+      <select id="user" data-testid="user-select" title="Đổi vai trò để xem quyền khác nhau"></select>
+    </div>
   </div>
 </header>
-<div class="banner">Dữ liệu giả lập (synthetic), thu nhỏ 1:100. Ngày hệ thống: <b id="today"></b>. Không phải hệ thống thật.</div>
+<div class="banner"><span>Bản demo · dữ liệu giả lập thu nhỏ 1:100 · ngày hệ thống <b id="today"></b></span><span class="hint">Đổi người dùng ở góc phải để thử từng vai trò</span></div>
 <div class="layout">
   <nav id="nav" aria-label="Chức năng"></nav>
   <main id="main" tabindex="-1"></main>

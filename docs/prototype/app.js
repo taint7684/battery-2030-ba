@@ -34,20 +34,40 @@
   const pointName = id => (S.points.find(p => p.id === id) || S.partners.find(p => p.id === id) || { name: id === 'TT' ? 'Trung tâm kiểm định' : id }).name;
   const ROLE = { CMP: 'Cán bộ tuân thủ', DLR: 'Đại lý', TEC: 'Kỹ thuật viên', TEC_LEAD: 'Trưởng dịch vụ', LOG: 'Kho vận', RCY: 'Đơn vị tái chế', MGT: 'Ban điều hành', ADM: 'Quản trị' };
   const MENU = [
-    ['dashboard', 'Tổng quan', ['CMP', 'MGT', 'ADM']],
-    ['registry', 'Sổ đăng ký pin', ['CMP', 'TEC', 'TEC_LEAD', 'LOG', 'MGT', 'ADM']],
-    ['models', 'Model pin & ERP', ['CMP', 'ADM']],
-    ['intake', 'Tiếp nhận pin', ['DLR', 'ADM']],
-    ['points', 'Điểm thu hồi', ['LOG', 'CMP', 'ADM', 'DLR']],
-    ['soh', 'Đánh giá SoH', ['TEC', 'TEC_LEAD']],
-    ['routing', 'Điều phối', ['TEC', 'TEC_LEAD', 'LOG']],
-    ['batches', 'Lô & chứng từ', ['LOG', 'CMP', 'RCY', 'ADM']],
-    ['partners', 'Đối tác & giấy phép', ['CMP', 'LOG', 'ADM']],
-    ['epr', 'Báo cáo EPR', ['CMP', 'MGT']],
-    ['params', 'Tham số', ['CMP', 'ADM']],
-    ['audit', 'Nhật ký kiểm toán', ['CMP', 'ADM']],
-    ['public', 'Cổng tra cứu công khai', null],
+    ['dashboard', 'Tổng quan', ['CMP', 'MGT', 'ADM'], 'Tổng quan'],
+    ['registry', 'Sổ đăng ký pin', ['CMP', 'TEC', 'TEC_LEAD', 'LOG', 'MGT', 'ADM'], 'Vòng đời pin'],
+    ['models', 'Model pin & ERP', ['CMP', 'ADM'], 'Vòng đời pin'],
+    ['intake', 'Tiếp nhận pin', ['DLR', 'ADM'], 'Vòng đời pin'],
+    ['points', 'Điểm thu hồi', ['LOG', 'CMP', 'ADM', 'DLR'], 'Vòng đời pin'],
+    ['soh', 'Đánh giá SoH', ['TEC', 'TEC_LEAD'], 'Vòng đời pin'],
+    ['routing', 'Điều phối', ['TEC', 'TEC_LEAD', 'LOG'], 'Vòng đời pin'],
+    ['batches', 'Lô & chứng từ', ['LOG', 'CMP', 'RCY', 'ADM'], 'Vòng đời pin'],
+    ['partners', 'Đối tác & giấy phép', ['CMP', 'LOG', 'ADM'], 'Tuân thủ EPR'],
+    ['epr', 'Báo cáo EPR', ['CMP', 'MGT'], 'Tuân thủ EPR'],
+    ['params', 'Tham số', ['CMP', 'ADM'], 'Tuân thủ EPR'],
+    ['audit', 'Nhật ký kiểm toán', ['CMP', 'ADM'], 'Tuân thủ EPR'],
+    ['public', 'Cổng tra cứu công khai', null, 'Công khai'],
   ];
+  // Bieu tuong net (24x24, stroke) cho menu va the chi so
+  const PATHS = {
+    dashboard: '<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>',
+    registry: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+    models: '<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M8 10v4M12 10v4"/>',
+    intake: '<path d="M4 13l3-8h10l3 8v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 13h5l1 2h4l1-2h5"/>',
+    points: '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    soh: '<path d="M3 12h4l2.5-6 4 12 2.5-6H21"/>',
+    routing: '<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 6H12a3 3 0 0 1 3 3v1M8.5 18H12a3 3 0 0 0 3-3v-1"/>',
+    batches: '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/>',
+    partners: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5.5M18 20a6 6 0 0 0-3-5"/>',
+    epr: '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h5"/>',
+    params: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
+    audit: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+    public: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z"/>',
+    leaf: '<path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/>',
+  };
+  const icon = (k, s = 18) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[k] || ''}</svg>`;
+  const initials = n => n.split(' ').filter(Boolean).slice(-2).map(w => w[0]).join('').toUpperCase();
+  const AVA = { CMP: '#059669', DLR: '#c2680a', TEC: '#2563eb', TEC_LEAD: '#1d4ed8', LOG: '#0e7490', RCY: '#6d4ae0', MGT: '#0f1e2b', ADM: '#475569' };
   const can = r => { const m = MENU.find(x => x[0] === r); return !m || !m[2] || m[2].includes(me().role); };
   const badge = s => {
     const c = { 'Đang lưu hành': 'b-info', 'Đã thu hồi': 'b-warn', 'Đã đánh giá': 'b-warn', 'Đời thứ hai': 'b-ok', 'Chờ tái chế': 'b-warn', 'Đã bàn giao': 'b-ok', 'Đã tái chế': 'b-ok', 'Đã hủy đăng ký': 'b-bad', 'Hợp lệ': 'b-ok', 'Sắp hết hạn': 'b-warn', 'Hết hạn': 'b-bad' }[s] || '';
@@ -60,8 +80,14 @@
     $('#user').innerHTML = S.users.map(u => `<option value="${u.id}" ${u.id === S.user ? 'selected' : ''}>${esc(u.name)} — ${ROLE[u.role]}${u.scope !== '*' ? ' (' + u.scope + ')' : ''}</option>`).join('');
     $('#offline').checked = !!S.offline;
     const r = route()[0];
-    $('#nav').innerHTML = MENU.filter(m => !m[2] || m[2].includes(me().role))
-      .map(m => `<a href="#/${m[0]}" data-testid="nav-${m[0]}" class="${r === m[0] ? 'on' : ''}">${m[1]}</a>`).join('');
+    const av = $('#avatar'); av.textContent = initials(me().name); av.style.background = AVA[me().role] || 'var(--blue)';
+    let grp = '';
+    $('#nav').innerHTML = MENU.filter(m => !m[2] || m[2].includes(me().role)).map(m => {
+      const head = m[3] !== grp ? `<div class="grp">${m[3]}</div>` : '';
+      grp = m[3];
+      const active = r === m[0] || (r === 'battery' && m[0] === 'registry');
+      return `${head}<a href="#/${m[0]}" data-testid="nav-${m[0]}" class="${active ? 'on' : ''}" ${active ? 'aria-current="page"' : ''}>${icon(m[0])}<span>${m[1]}</span></a>`;
+    }).join('');
   }
   const route = () => (location.hash.replace(/^#\//, '') || '').split('/');
   function render() {
@@ -92,20 +118,39 @@
     const sl = routed.filter(x => x.route.final === 'Đời thứ hai').length, rc = routed.length - sl;
     const pk = D.pickupProposals(S, S.today).filter(p => p.reasons.length);
     const lic = S.partners.filter(p => ['Sắp hết hạn', 'Hết hạn'].includes(D.licenseState(p, S.today)));
-    return `<h1>Tổng quan</h1><p class="sub">Năm trách nhiệm ${year} · NĐ 110/2026/NĐ-CP</p>
+    const STC = [['Đang lưu hành', '#2563eb'], ['Đã thu hồi', '#f59e0b'], ['Đã đánh giá', '#a855f7'], ['Chờ tái chế', '#f97316'], ['Đời thứ hai', '#10b981'], ['Đã bàn giao', '#14b8a6'], ['Đã tái chế', '#64748b']];
+    const reg = b.filter(x => !x.producer && x.placed_date || x.kind === 'Hãng khác');
+    const cnt = STC.map(([s, c]) => [s, c, reg.filter(x => x.status === s).length]).filter(x => x[2] > 0);
+    const tot = cnt.reduce((a, x) => a + x[2], 0) || 1;
+    const months = Array.from({ length: +S.today.slice(5, 7) }, (_, i) => String(i + 1).padStart(2, '0'));
+    const byM = months.map(mo => S.intakes.filter(i => i.date.startsWith(`${year}-${mo}`)).length);
+    const mx = Math.max(1, ...byM);
+    const todo = pk.length + lic.length + S.notices.length;
+    return `<section class="hello"><div><h1>Chào ${esc(me().name)}</h1><p>${ROLE[me().role]} · năm trách nhiệm ${year} theo NĐ 110/2026/NĐ-CP · ${todo ? `${todo} việc cần xử lý hôm nay` : 'không có việc tồn đọng'}</p></div>
+      <span class="pill">Hạn nộp hồ sơ còn ${dl[0].daysLeft} ngày</span></section>
     <div class="grid">
-      <div class="card kpi"><div class="l">Pin đã đăng ký (lũy kế)</div><div class="v" data-testid="kpi-registered">${num(b.filter(x => !x.producer && x.placed_date).length, 0)}</div><div class="f">mẫu 1:100</div></div>
-      <div class="card kpi"><div class="l">Pin thu hồi năm ${year}</div><div class="v">${num(S.intakes.filter(i => i.date.startsWith(year)).length, 0)}</div><div class="f">từ ngày thí điểm ${D.fmtDate(S.go_live)}</div></div>
-      <div class="card kpi"><div class="l">Tỷ lệ thu gom pin LMT ${year} (chuẩn EU)</div><div class="v" data-testid="kpi-collection">${lmt.ok ? num(lmt.rate * 100, 1) + '%' : 'Chưa đủ dữ liệu'}</div>
+      <div class="card kpi c-green"><div class="ic">${icon('registry', 20)}</div><div class="l">Pin đã đăng ký (lũy kế)</div><div class="v" data-testid="kpi-registered">${num(b.filter(x => !x.producer && x.placed_date).length, 0)}</div><div class="f">Dữ liệu mẫu 1:100</div></div>
+      <div class="card kpi c-blue"><div class="ic">${icon('intake', 20)}</div><div class="l">Pin thu hồi năm ${year}</div><div class="v">${num(S.intakes.filter(i => i.date.startsWith(year)).length, 0)}</div><div class="f">Từ ngày thí điểm ${D.fmtDate(S.go_live)}</div></div>
+      <div class="card kpi c-amber"><div class="ic">${icon('leaf', 20)}</div><div class="l">Tỷ lệ thu gom pin LMT ${year} (chuẩn EU)</div><div class="v" data-testid="kpi-collection">${lmt.ok ? num(lmt.rate * 100, 1) + '%' : 'Chưa đủ dữ liệu'}</div>
         <div class="f" data-testid="kpi-collection-formula">${lmt.ok ? `${num(lmt.collected)} kg ÷ bình quân(${lmt.placed.slice().reverse().map(x => num(x, 0)).join('; ')}) kg của ${year - 3}–${year - 1}` : 'Thiếu khối lượng đưa ra thị trường của ít nhất một năm trong 3 năm trước'} · BR-23</div></div>
-      <div class="card kpi"><div class="l">Kết quả điều phối (lũy kế)</div><div class="v">${sl} / ${rc}</div><div class="f">Đời thứ hai / Tái chế</div></div>
+      <div class="card kpi c-violet"><div class="ic">${icon('routing', 20)}</div><div class="l">Kết quả điều phối (lũy kế)</div><div class="v">${sl} / ${rc}</div><div class="f">Đời thứ hai / Tái chế</div></div>
     </div>
-    <h2>Hạn nộp (BR-21)</h2><div class="tw"><table data-testid="deadlines"><tr><th>Việc</th><th>Hạn</th><th class="n">Còn (ngày)</th><th>Nhắc</th></tr>
-      ${dl.map(d => `<tr><td>${esc(d.label)}</td><td>${D.fmtDate(d.date)}</td><td class="n">${d.daysLeft}</td><td>${d.remind ? '<span class="badge b-warn">Nhắc hôm nay</span>' : 'Mốc nhắc: 30, 7, 1 ngày'}</td></tr>`).join('')}</table></div>
-    <h2>Việc cần xử lý</h2>
-    ${pk.map(p => `<div class="alert a-warn">Đề xuất gom lô tại ${esc(pointName(p.point))}: ${esc(p.reasons.join('; '))}</div>`).join('') || '<div class="alert a-ok">Không có đề xuất gom lô</div>'}
-    ${lic.map(p => `<div class="alert a-bad">Giấy phép ${esc(p.name)}: ${D.licenseState(p, S.today)} (${D.fmtDate(p.license_to)})</div>`).join('')}
-    ${S.notices.map(n => `<div class="alert a-info" data-testid="notice">${esc(n)}</div>`).join('')}`;
+    <div class="two">
+      <div class="card"><h2>Pin đã thu hồi theo bước xử lý</h2>
+        <p class="muted" style="margin:-4px 0 12px;font-size:13px">${num((cnt.find(x => x[0] === 'Đang lưu hành') || [0, 0, 0])[2], 0)} pin đang lưu hành ngoài thị trường · ${num(tot - (cnt.find(x => x[0] === 'Đang lưu hành') || [0, 0, 0])[2], 0)} pin đã vào kênh thu hồi</p>
+        ${(() => { const rows = cnt.filter(x => x[0] !== 'Đang lưu hành'); const m2 = Math.max(1, ...rows.map(x => x[2]));
+          return rows.map(([s, c, n]) => `<div class="hbar"><span>${s}</span><div><i style="width:${n / m2 * 100}%;background:${c}"></i></div><b>${num(n, 0)}</b></div>`).join(''); })()}</div>
+      <div class="card"><h2>Pin thu hồi theo tháng ${year}</h2>
+        <div class="cols" role="img" aria-label="Số pin thu hồi theo tháng">${months.map((mo, i) => `<div><em>${byM[i] || ''}</em><i style="height:${Math.max(3, byM[i] / mx * 100)}%" title="Tháng ${+mo}: ${byM[i]} pin"></i>T${+mo}</div>`).join('')}</div></div>
+    </div>
+    <div class="two">
+      <div><h2>Hạn nộp (BR-21)</h2><div class="tw"><table data-testid="deadlines"><tr><th>Việc</th><th>Hạn</th><th class="n">Còn (ngày)</th><th>Nhắc</th></tr>
+      ${dl.map(d => `<tr><td>${esc(d.label)}</td><td>${D.fmtDate(d.date)}</td><td class="n">${d.daysLeft}</td><td>${d.remind ? '<span class="badge b-warn">Nhắc hôm nay</span>' : '<span class="muted">Mốc nhắc: 30, 7, 1 ngày</span>'}</td></tr>`).join('')}</table></div></div>
+      <div><h2>Việc cần xử lý</h2>
+    ${pk.map(p => `<div class="alert a-warn"><div>Đề xuất gom lô tại <b>${esc(pointName(p.point))}</b>: ${esc(p.reasons.join('; '))}</div></div>`).join('') || '<div class="alert a-ok"><div>Không có đề xuất gom lô</div></div>'}
+    ${lic.map(p => `<div class="alert a-bad"><div>Giấy phép <b>${esc(p.name)}</b>: ${D.licenseState(p, S.today)} (${D.fmtDate(p.license_to)})</div></div>`).join('')}
+    ${S.notices.map(n => `<div class="alert a-info" data-testid="notice">${esc(n)}</div>`).join('')}</div>
+    </div>`;
   };
 
   // ---------- So dang ky (FR-04) ----------
@@ -342,7 +387,7 @@
     ${ev.map(({ b, r }) => `<tr data-uid="${b.uid}"><td><a class="link mono" href="#/battery/${b.uid}">${b.uid}</a>${b.hazard ? ' <span class="badge b-bad">Nguy hiểm</span>' : ''}</td><td>${b.model}</td>
       <td class="n">${b.soh && b.soh.model_est != null ? num(b.soh.model_est) + '%' : '—'}</td><td>${b.soh && b.soh.ci_low != null ? `[${num(b.soh.ci_low)}; ${num(b.soh.ci_high)}]` : '—'}</td>
       <td data-testid="soh-status">${r.status === 'valid' ? `<span class="badge b-ok">Hợp lệ — ${r.source}</span>` : `<span class="badge b-warn">Chờ đo tay</span> <small data-testid="soh-reason">${esc(r.reason)}</small>`}</td>
-      <td class="actions">${r.status === 'valid' ? `<button class="ghost" data-confirm="${b.uid}" data-testid="soh-confirm">Xác nhận</button>` : `<input type="number" step="0.1" placeholder="SoH đo tay %" data-manual="${b.uid}" data-testid="soh-manual-input" style="width:120px"><button class="ghost" data-savemanual="${b.uid}" data-testid="soh-manual-save">Lưu đo tay</button>`}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">Không có pin chờ đánh giá</td></tr>'}</table></div>
+      <td class="actions">${r.status === 'valid' ? `<button class="sm" data-confirm="${b.uid}" data-testid="soh-confirm">Xác nhận</button>` : `<input type="number" step="0.1" placeholder="SoH đo tay %" data-manual="${b.uid}" data-testid="soh-manual-input" style="width:120px"><button class="ghost" data-savemanual="${b.uid}" data-testid="soh-manual-save">Lưu đo tay</button>`}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">Không có pin chờ đánh giá</td></tr>'}</table></div>
     <h2>Ghi đè kết quả (BR-14)</h2><div class="card"><form id="ovr" class="row" onsubmit="return false">
       <label class="f">Mã pin (đã có SoH hợp lệ)<input name="uid" data-testid="ovr-uid"></label><label class="f">SoH mới (%)<input name="v" type="number" step="0.1" data-testid="ovr-value"></label>
       <label class="f">Lý do<input name="reason" data-testid="ovr-reason"></label><div class="actions"><button data-testid="ovr-save">Ghi đè</button></div></form><div id="ores" data-testid="ovr-result"></div></div>`;
@@ -379,7 +424,7 @@
     <h2>Chờ quyết định</h2><div class="tw"><table data-testid="route-table"><tr><th>Mã pin</th><th>Nhóm</th><th>Đề xuất</th><th>Lý do</th><th>Chọn hướng</th></tr>
     ${todo.map(b => { const p = D.routeProposal(b, S); return `<tr data-uid="${b.uid}"><td><a class="link mono" href="#/battery/${b.uid}">${b.uid}</a></td><td>${D.groupOf(b, S.models)}</td>
       <td data-testid="route-proposal">${p.proposal ? badge(p.proposal) : '—'}</td><td><small>${esc(p.reason)}</small></td>
-      <td class="actions">${['TEC', 'TEC_LEAD'].includes(u.role) ? `<button class="ghost" data-route="Tái chế" data-uid="${b.uid}" data-testid="route-recycle">Tái chế</button><button class="ghost" data-route="Đời thứ hai" data-uid="${b.uid}" data-testid="route-sl" ${p.slAllowed ? '' : 'disabled title="' + esc(p.reason) + '"'}>Đời thứ hai</button>` : ''}</td></tr>`; }).join('') || '<tr><td colspan="5" class="empty">Không có pin chờ quyết định</td></tr>'}</table></div>
+      <td class="actions">${['TEC', 'TEC_LEAD'].includes(u.role) ? `<button class="${p.proposal === 'Tái chế' ? '' : 'ghost'}" data-route="Tái chế" data-uid="${b.uid}" data-testid="route-recycle">Tái chế</button><button class="${p.proposal === 'Đời thứ hai' ? '' : 'ghost'}" data-route="Đời thứ hai" data-uid="${b.uid}" data-testid="route-sl" ${p.slAllowed ? '' : 'disabled title="' + esc(p.reason) + '"'}>Đời thứ hai</button>` : ''}</td></tr>`; }).join('') || '<tr><td colspan="5" class="empty">Không có pin chờ quyết định</td></tr>'}</table></div>
     <h2>Chờ phê duyệt Đời thứ hai</h2><div class="tw"><table data-testid="approve-table"><tr><th>Mã pin</th><th>Người đề xuất</th><th></th></tr>
     ${pending.map(b => `<tr data-uid="${b.uid}"><td class="mono">${b.uid}</td><td>${esc((S.users.find(x => x.id === b.route.by) || {}).name)}</td><td>${u.role === 'TEC_LEAD' ? `<button data-approve="${b.uid}" data-testid="approve">Phê duyệt</button>` : ''}</td></tr>`).join('') || '<tr><td colspan="3" class="empty">Không có</td></tr>'}</table></div>
     <h2>Bàn giao Đời thứ hai</h2><div class="tw"><table data-testid="handover-table"><tr><th>Mã pin</th><th>Đơn vị nhận</th><th>Số hợp đồng / hóa đơn</th><th></th></tr>
@@ -536,15 +581,15 @@
   // ---------- Cong cong khai (FR-10, BR-28) ----------
   VIEWS.public = () => {
     const provs = [...new Set(S.points.filter(p => p.active).map(p => p.province))];
-    return `<h1>Trả pin xe điện ở đâu?</h1><p class="sub">Trả pin miễn phí, nhận pin mọi hãng, không cần mua pin mới.</p>
-    <div class="card"><label class="f">Tỉnh/thành phố<select id="prov" data-testid="pub-prov"><option value="">Chọn</option>${provs.map(p => `<option>${p}</option>`).join('')}</select></label></div>
-    <div id="publist" data-testid="pub-list"></div>
+    return `<section class="hello"><div><h1>Trả pin xe điện ở đâu?</h1><p>Miễn phí · nhận pin mọi hãng · không cần mua pin mới</p></div>
+      <label class="f pubsel">Chọn tỉnh/thành phố<select id="prov" data-testid="pub-prov"><option value="">Chọn</option>${provs.map(p => `<option>${p}</option>`).join('')}</select></label></section>
+    <div id="publist" class="grid" data-testid="pub-list"><div class="card empty">Chọn tỉnh/thành phố để xem điểm trả pin gần bạn</div></div>
     <div class="card"><h2>Thải pin an toàn</h2><ol><li>Không tự tháo, đục, đốt pin.</li><li>Pin phồng, rò rỉ, nóng: để nơi thoáng, xa vật dễ cháy, mang đến điểm trả sớm nhất.</li><li>Dán băng dính cách điện lên cực pin khi vận chuyển.</li><li>Không bán pin cho người thu mua không có giấy phép.</li></ol></div>`;
   };
   BIND.public = () => {
     $('#prov').onchange = e => {
       const pts = S.points.filter(p => p.active && p.province === e.target.value);
-      $('#publist').innerHTML = pts.map(p => `<div class="card" data-testid="pub-point"><b>${esc(p.name)}</b><br>${esc(p.address)}, ${esc(p.province)}<br>Giờ mở cửa: ${esc(p.hours)}</div>`).join('') || '<div class="empty">Chưa có điểm</div>';
+      $('#publist').innerHTML = pts.map(p => `<div class="card pubpt" data-testid="pub-point"><div class="ic">${icon('points', 20)}</div><div><b>${esc(p.name)}</b><div class="muted">${esc(p.address)}, ${esc(p.province)}</div><span class="badge b-ok">Giờ mở cửa: ${esc(p.hours)}</span> <span class="badge b-info">${esc(p.type)}</span></div></div>`).join('') || '<div class="card empty">Chưa có điểm trả pin ở tỉnh/thành này</div>';
     };
   };
 

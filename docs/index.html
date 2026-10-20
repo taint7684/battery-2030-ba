@@ -1,26 +1,38 @@
 <!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Battery 2030 — Case study</title><style>:root{--bg:#f6f6f3;--panel:#fff;--ink:#16201c;--ink2:#52514e;--muted:#6f6e69;--line:#e1e2dd;--accent:#1f6f5c;--blue:#2a78d6;--orange:#eb6834;--aqua:#1baf7a;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121614;--panel:#1b201e;--ink:#e7ece9;--ink2:#b8bfbb;--muted:#9aa29e;--line:#2c3330;--accent:#5cc3a6;color-scheme:dark}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,"Segoe UI",Arial,sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 64px}header.hero{padding:32px 0 16px;border-bottom:2px solid var(--ink)}
-.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
-h1{font-size:clamp(28px,4.5vw,40px);line-height:1.15;margin:8px 0}h2{font-size:22px;margin:40px 0 10px}h3{font-size:17px;margin:20px 0 6px}
-p.lead{font-size:18px;color:var(--ink2);max-width:70ch}.links{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.links a,.btn{display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
-.links a.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.kpi b{display:block;font-size:26px}.kpi span{color:var(--ink2);font-size:14px}figure{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
-figure img{width:100%;height:auto;display:block}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
-table{border-collapse:collapse;width:100%;font-size:14px;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
-ol.steps{padding-left:20px}.note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:12px;min-height:380px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.bar button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);cursor:pointer}
-.bar button[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}</style></head><body><div class="wrap">
+<title>Battery 2030 — Case study</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap"><style>:root{--bg:#f3f6f9;--panel:#fff;--ink:#0f1e2b;--ink2:#46566a;--muted:#6b7a8c;--line:#e3e9f0;--accent:#059669;--accent-ink:#047857;--soft:#d8f5e8;--blue:#2563eb;--blue-soft:#e0eaff;--amber:#c2680a;--amber-soft:#fff1d6;--violet:#6d4ae0;--violet-soft:#ece7ff;--shadow:0 1px 2px rgba(15,30,43,.06),0 6px 18px rgba(15,30,43,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1520;--panel:#141f2c;--ink:#e7eef6;--ink2:#b4c1d0;--muted:#8a99ab;--line:#25344a;--accent:#34d399;--accent-ink:#6ee7b7;--soft:#123a2f;--blue:#7aa7ff;--blue-soft:#18294a;--amber:#f5b45c;--amber-soft:#3a2a12;--violet:#b4a2ff;--violet-soft:#2a2347;--shadow:none;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+header.hero{padding:36px 32px 30px;border-radius:22px;color:#fff;background:radial-gradient(1200px 300px at 90% -10%,rgba(52,211,153,.55),transparent 60%),linear-gradient(120deg,#064e3b 0%,#047857 45%,#0e7490 100%);box-shadow:0 14px 40px rgba(5,150,105,.25)}
+.eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:999px}
+h1{font-size:clamp(28px,4.6vw,44px);line-height:1.12;margin:14px 0 10px;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
+header.hero p.lead{color:rgba(255,255,255,.9)}
+h2{font-size:24px;margin:44px 0 12px;letter-spacing:-.01em;text-wrap:balance}h3{font-size:17px;margin:20px 0 6px}
+p.lead{font-size:18px;color:var(--ink2);max-width:72ch;margin:0}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.links a{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:12px;background:#fff;color:#065f46;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .12s}
+.links a:hover{transform:translateY(-1px)}.links a.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);box-shadow:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:-26px 18px 10px;position:relative}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.2}.kpi span{color:var(--ink2);font-size:14px}
+.kpi:nth-child(1) b{color:var(--accent)}.kpi:nth-child(2) b{color:var(--blue)}.kpi:nth-child(3) b{color:var(--amber)}.kpi:nth-child(4) b{color:var(--violet)}
+figure{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+figure img{width:100%;height:auto;display:block;border-radius:8px}figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--bg)}tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);background:var(--panel)}
+ol.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:10px}ol.steps li{counter-increment:s;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;box-shadow:var(--shadow)}
+ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,#10b981,#0e7490)}
+.note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:16px;min-height:390px;box-shadow:var(--shadow);overflow:hidden}
+.kpis.flat{margin:0 0 14px}
+.bar{display:inline-flex;gap:4px;padding:4px;margin:22px 0 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.bar button{font:inherit;font-size:14px;font-weight:600;padding:8px 18px;border:0;border-radius:9px;background:transparent;color:var(--ink2);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--accent);color:#fff}.bar button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}</style></head><body><div class="wrap">
 <header class="hero"><div class="eyebrow">Case study · Business Analysis · Kinh tế tuần hoàn</div>
 <h1>Battery 2030: pin xe điện hết hạn ở Việt Nam đi đâu, và doanh nghiệp nên chuẩn bị gì?</h1>
 <p class="lead">Thiết kế nền tảng quản lý vòng đời và trách nhiệm thu hồi pin cho một hãng xe máy điện giả định (VELIX), từ văn bản luật đến dự báo, đặc tả, prototype kiểm thử tự động và business case.</p>
-<div class="links"><a href="forecast.html">Dashboard dự báo</a><a href="prototype/index.html">Prototype click được</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba/blob/main/08-package/S22-executive-summary.md">Tóm tắt điều hành</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba">Mã nguồn và tài liệu</a></div></header>
+<div class="links"><a href="forecast.html">Dashboard dự báo →</a><a href="prototype/index.html">Prototype click được →</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba/blob/main/08-package/S22-executive-summary.md">Tóm tắt điều hành</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba">Mã nguồn và tài liệu</a></div></header>
 <div class="kpis">
 <div class="kpi"><b>≈15 nghìn tấn</b><span>pin Li hết hạn năm 2030 (P10–P90: 11–20)</span></div>
 <div class="kpi"><b>≈71 nghìn tấn</b><span>năm 2035 — gấp gần 5 lần 2030</span></div>

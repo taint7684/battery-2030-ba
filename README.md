@@ -5,7 +5,11 @@ Khách hàng giả định: **VELIX** (hãng xe máy điện hư cấu). Dữ li
 
 **[Case study](https://taint7684.github.io/battery-2030-ba/)** · **[Dashboard dự báo](https://taint7684.github.io/battery-2030-ba/forecast.html)** · **[Prototype](https://taint7684.github.io/battery-2030-ba/prototype/)** · **[Tóm tắt điều hành](08-package/S22-executive-summary.md)**
 
-![Dự báo pin Li hết hạn](03-forecast/outputs/fig-li-fan.png)
+[![Trang case study Battery 2030](docs/img/readme-casestudy.png)](https://taint7684.github.io/battery-2030-ba/)
+
+| Pin Li hết hạn 2030 | Pin Li hết hạn 2035 | Vượt 10 nghìn tấn/năm | Test tự động |
+|:---:|:---:|:---:|:---:|
+| **≈15 nghìn tấn** | **≈71 nghìn tấn** | **2029–2030** | **73/73 đạt** |
 
 ## Năm phát hiện
 
@@ -31,6 +35,36 @@ flowchart LR
   B --> K
 ```
 
+## Dashboard dự báo
+
+[![Dashboard dự báo: chọn kịch bản, dải P10–P90, phân khúc pin](docs/img/readme-forecast.png)](https://taint7684.github.io/battery-2030-ba/forecast.html)
+<sub>Cohort × Weibull, 1.000 lượt Monte Carlo mỗi kịch bản. Bấm ảnh để mở bản tương tác.</sub>
+
+## Prototype — 14 màn hình, phân quyền theo 8 vai trò
+
+| Tổng quan (Cán bộ tuân thủ) | Tiếp nhận pin (Đại lý) |
+|:---:|:---:|
+| [![Tổng quan](04-solution/screens/01-tong-quan.png)](https://taint7684.github.io/battery-2030-ba/prototype/) | [![Tiếp nhận pin](04-solution/screens/04-tiep-nhan.png)](https://taint7684.github.io/battery-2030-ba/prototype/) |
+| **Điều phối đời thứ hai / tái chế (Kỹ thuật viên)** | **Báo cáo EPR: V, R × V, F (Cán bộ tuân thủ)** |
+| [![Điều phối](04-solution/screens/07-dieu-phoi.png)](https://taint7684.github.io/battery-2030-ba/prototype/) | [![Báo cáo EPR](04-solution/screens/10-bao-cao-epr.png)](https://taint7684.github.io/battery-2030-ba/prototype/) |
+| **Đánh giá SoH có độ tin cậy** | **Hồ sơ pin (battery passport) và dòng thời gian** |
+| [![Đánh giá SoH](04-solution/screens/06-danh-gia-soh.png)](https://taint7684.github.io/battery-2030-ba/prototype/) | [![Hồ sơ pin](04-solution/screens/13-ho-so-pin.png)](https://taint7684.github.io/battery-2030-ba/prototype/) |
+
+Đổi người dùng ở góc phải để thử từng vai trò; bật "Mất kết nối" để thử tiếp nhận ngoại tuyến. Tất cả ảnh: [04-solution/screens](04-solution/screens).
+
+## Quy trình mục tiêu (BPMN 2.0)
+
+[![BPMN To-Be](04-solution/S13-bpmn/to-be.png)](04-solution/S13-bpmn/to-be.md)
+<sub>Thu hồi → đánh giá SoH → điều phối → bàn giao → báo cáo EPR; mỗi bước gắn mã quy tắc nghiệp vụ. Nguồn: [to-be.bpmn](04-solution/S13-bpmn/to-be.bpmn).</sub>
+
+## Dòng vật chất, AI và business case
+
+| Pin hết hạn năm 2030 đi đâu | Mô hình SoH và khoảng tin cậy |
+|:---:|:---:|
+| [![Sankey 2030](03-forecast/outputs/fig-sankey-2030.png)](03-forecast/S10-material-flow.md) | [![Dự đoán SoH](05-ai-soh/outputs/fig-pred-b0006.png)](05-ai-soh/S17-model-card.md) |
+| **NPV 3 phương án EPR** | **Tham số quyết định cho pin Li** |
+| [![NPV](07-business-case/outputs/fig-npv.png)](07-business-case/S21-business-case.md) | [![Tornado](07-business-case/outputs/fig-tornado-li.png)](07-business-case/S21-business-case.md) |
+
 ## Sản phẩm
 
 | Mã | Sản phẩm | Tệp |
@@ -41,7 +75,7 @@ flowchart LR
 | S8–S11 | Dữ liệu · dự báo · dòng vật chất · phản biện | [03-forecast](03-forecast/S9-forecast-results.md) |
 | S12–S16 | Vision & Scope · BPMN To-Be · SRS · dữ liệu · backlog | [04-solution](04-solution/S14-srs.md) |
 | S17–S18 | Model card SoH · yêu cầu AI (SRS §7) | [05-ai-soh](05-ai-soh/S17-model-card.md) |
-| S19 | Prototype click được | [docs/prototype](docs/prototype/index.html) · [ảnh màn hình](04-solution/screens) |
+| S19 | Prototype click được · user flow 6 màn lõi | [docs/prototype](docs/prototype/index.html) · [user-flows.md](04-solution/user-flows.md) · [ảnh màn hình](04-solution/screens) |
 | S20 | Kế hoạch kiểm thử · 73 test case · RTM · UAT | [06-test](06-test/S20-test-plan.md) |
 | S21 | Business case | [07-business-case](07-business-case/S21-business-case.md) |
 | S22–S23 | Tóm tắt điều hành · case study · slide | [08-package](08-package) |

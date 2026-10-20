@@ -29,32 +29,44 @@ sankey = json.loads((ROOT / "03-forecast/outputs/sankey_2030.json").read_text(en
 m = json.loads((ROOT / "05-ai-soh/outputs/metrics.json").read_text(encoding="utf-8"))
 tests = json.loads((ROOT / "06-test/test-results.json").read_text(encoding="utf-8"))
 
-CSS = """:root{--bg:#f6f6f3;--panel:#fff;--ink:#16201c;--ink2:#52514e;--muted:#6f6e69;--line:#e1e2dd;--accent:#1f6f5c;--blue:#2a78d6;--orange:#eb6834;--aqua:#1baf7a;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121614;--panel:#1b201e;--ink:#e7ece9;--ink2:#b8bfbb;--muted:#9aa29e;--line:#2c3330;--accent:#5cc3a6;color-scheme:dark}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,"Segoe UI",Arial,sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 64px}header.hero{padding:32px 0 16px;border-bottom:2px solid var(--ink)}
-.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
-h1{font-size:clamp(28px,4.5vw,40px);line-height:1.15;margin:8px 0}h2{font-size:22px;margin:40px 0 10px}h3{font-size:17px;margin:20px 0 6px}
-p.lead{font-size:18px;color:var(--ink2);max-width:70ch}.links{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.links a,.btn{display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
-.links a.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.kpi b{display:block;font-size:26px}.kpi span{color:var(--ink2);font-size:14px}figure{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
-figure img{width:100%;height:auto;display:block}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
-table{border-collapse:collapse;width:100%;font-size:14px;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
-ol.steps{padding-left:20px}.note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:12px;min-height:380px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.bar button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);cursor:pointer}
-.bar button[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}"""
+CSS = """:root{--bg:#f3f6f9;--panel:#fff;--ink:#0f1e2b;--ink2:#46566a;--muted:#6b7a8c;--line:#e3e9f0;--accent:#059669;--accent-ink:#047857;--soft:#d8f5e8;--blue:#2563eb;--blue-soft:#e0eaff;--amber:#c2680a;--amber-soft:#fff1d6;--violet:#6d4ae0;--violet-soft:#ece7ff;--shadow:0 1px 2px rgba(15,30,43,.06),0 6px 18px rgba(15,30,43,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1520;--panel:#141f2c;--ink:#e7eef6;--ink2:#b4c1d0;--muted:#8a99ab;--line:#25344a;--accent:#34d399;--accent-ink:#6ee7b7;--soft:#123a2f;--blue:#7aa7ff;--blue-soft:#18294a;--amber:#f5b45c;--amber-soft:#3a2a12;--violet:#b4a2ff;--violet-soft:#2a2347;--shadow:none;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+header.hero{padding:36px 32px 30px;border-radius:22px;color:#fff;background:radial-gradient(1200px 300px at 90% -10%,rgba(52,211,153,.55),transparent 60%),linear-gradient(120deg,#064e3b 0%,#047857 45%,#0e7490 100%);box-shadow:0 14px 40px rgba(5,150,105,.25)}
+.eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:999px}
+h1{font-size:clamp(28px,4.6vw,44px);line-height:1.12;margin:14px 0 10px;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
+header.hero p.lead{color:rgba(255,255,255,.9)}
+h2{font-size:24px;margin:44px 0 12px;letter-spacing:-.01em;text-wrap:balance}h3{font-size:17px;margin:20px 0 6px}
+p.lead{font-size:18px;color:var(--ink2);max-width:72ch;margin:0}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.links a{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:12px;background:#fff;color:#065f46;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .12s}
+.links a:hover{transform:translateY(-1px)}.links a.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);box-shadow:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:-26px 18px 10px;position:relative}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.2}.kpi span{color:var(--ink2);font-size:14px}
+.kpi:nth-child(1) b{color:var(--accent)}.kpi:nth-child(2) b{color:var(--blue)}.kpi:nth-child(3) b{color:var(--amber)}.kpi:nth-child(4) b{color:var(--violet)}
+figure{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+figure img{width:100%;height:auto;display:block;border-radius:8px}figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--bg)}tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);background:var(--panel)}
+ol.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:10px}ol.steps li{counter-increment:s;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;box-shadow:var(--shadow)}
+ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,#10b981,#0e7490)}
+.note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:16px;min-height:390px;box-shadow:var(--shadow);overflow:hidden}
+.kpis.flat{margin:0 0 14px}
+.bar{display:inline-flex;gap:4px;padding:4px;margin:22px 0 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.bar button{font:inherit;font-size:14px;font-weight:600;padding:8px 18px;border:0;border-radius:9px;background:transparent;color:var(--ink2);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--accent);color:#fff}.bar button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}"""
 REPO = "https://github.com/taint7684/battery-2030-ba/blob/main/"
 
 index = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Battery 2030 — Case study</title><style>{CSS}</style></head><body><div class="wrap">
+<title>Battery 2030 — Case study</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap"><style>{CSS}</style></head><body><div class="wrap">
 <header class="hero"><div class="eyebrow">Case study · Business Analysis · Kinh tế tuần hoàn</div>
 <h1>Battery 2030: pin xe điện hết hạn ở Việt Nam đi đâu, và doanh nghiệp nên chuẩn bị gì?</h1>
 <p class="lead">Thiết kế nền tảng quản lý vòng đời và trách nhiệm thu hồi pin cho một hãng xe máy điện giả định (VELIX), từ văn bản luật đến dự báo, đặc tả, prototype kiểm thử tự động và business case.</p>
-<div class="links"><a href="forecast.html">Dashboard dự báo</a><a href="prototype/index.html">Prototype click được</a><a class="ghost" href="{REPO}08-package/S22-executive-summary.md">Tóm tắt điều hành</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba">Mã nguồn và tài liệu</a></div></header>
+<div class="links"><a href="forecast.html">Dashboard dự báo →</a><a href="prototype/index.html">Prototype click được →</a><a class="ghost" href="{REPO}08-package/S22-executive-summary.md">Tóm tắt điều hành</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba">Mã nguồn và tài liệu</a></div></header>
 <div class="kpis">
 <div class="kpi"><b>≈15 nghìn tấn</b><span>pin Li hết hạn năm 2030 (P10–P90: 11–20)</span></div>
 <div class="kpi"><b>≈71 nghìn tấn</b><span>năm 2035 — gấp gần 5 lần 2030</span></div>
@@ -104,11 +116,12 @@ index = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta nam
 (DOCS / "index.html").write_text(index, encoding="utf-8")
 
 forecast = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Battery 2030 — Dashboard dự báo</title><script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script><style>{CSS}</style></head><body><div class="wrap">
+<title>Battery 2030 — Dashboard dự báo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap"><script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script><style>{CSS}</style></head><body><div class="wrap">
 <header class="hero"><div class="eyebrow">S9 · S10 · Dashboard dự báo</div><h1>Pin xe điện hết hạn tại Việt Nam 2025–2035</h1>
 <p class="lead">Chọn kịch bản doanh số. Khoảng màu là P10–P90 của 1.000 lượt Monte Carlo. Rê chuột để xem số.</p>
 <div class="links"><a class="ghost" href="index.html">← Case study</a><a class="ghost" href="{REPO}03-forecast/S9-forecast-results.md">Phương pháp và bảng số</a></div></header>
 <div class="bar" role="group" aria-label="Kịch bản">{''.join(f'<button type="button" data-sc="{s}" aria-pressed="false">{s}</button>' for s in ['Chậm', 'Cơ sở', 'Nhanh'])}</div>
+<div class="kpis flat" id="stats"></div>
 <div class="grid2"><div id="fan" class="chart"></div><div id="seg" class="chart"></div></div>
 <h2>Năm vượt ngưỡng công suất tái chế pin Li</h2><div class="tw"><table id="cross"></table></div>
 <h2>Dòng pin hết hạn năm 2030</h2><div id="sankey" class="chart"></div>
@@ -116,19 +129,21 @@ forecast = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta 
 <script>
 const FAN={json.dumps(fan, ensure_ascii=False)},SEG={json.dumps(seg, ensure_ascii=False)},CROSS={json.dumps(cross, ensure_ascii=False)},SK={json.dumps(sankey, ensure_ascii=False)};
 const C={{"e2W-Li":"#2a78d6","e2W-Chì":"#eb6834","Ô tô-Li":"#1baf7a"}},L={{"e2W-Li":"Xe máy pin Li","e2W-Chì":"Xe máy ắc quy chì","Ô tô-Li":"Ô tô pin Li"}};
-const dark=matchMedia('(prefers-color-scheme: dark)').matches,ink=dark?'#e7ece9':'#16201c',grid=dark?'#2c3330':'#e4e3df',bg=dark?'#1b201e':'#ffffff';
+const dark=matchMedia('(prefers-color-scheme: dark)').matches,ink=dark?'#e7eef6':'#0f1e2b',grid=dark?'#25344a':'#e9eef4',bg=dark?'#141f2c':'#ffffff';
 const lay=t=>({{title:{{text:t,x:0.02,font:{{size:15}}}},paper_bgcolor:bg,plot_bgcolor:bg,font:{{color:ink,size:12}},margin:{{l:56,r:16,t:48,b:40}},xaxis:{{gridcolor:grid}},yaxis:{{gridcolor:grid,title:'nghìn tấn / năm'}},legend:{{orientation:'h',y:-0.15}},hovermode:'x unified'}});
 const kt=a=>a.map(v=>v/1000);
 function draw(sc){{
  document.querySelectorAll('.bar button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.sc===sc));
  const f=FAN[sc].Li_eol_t;
  Plotly.react('fan',[{{x:f.year,y:kt(f.p90),mode:'lines',line:{{width:0}},hoverinfo:'skip',showlegend:false}},
-  {{x:f.year,y:kt(f.p10),mode:'lines',fill:'tonexty',fillcolor:'rgba(42,120,214,0.22)',line:{{width:0}},name:'P10–P90',hovertemplate:'P10 %{{y:.1f}}<extra></extra>'}},
-  {{x:f.year,y:kt(f.p50),mode:'lines',line:{{color:'#2a78d6',width:2.5}},name:'Trung vị P50',hovertemplate:'P50 %{{y:.1f}} nghìn tấn<extra></extra>'}}],lay('Pin Li hết hạn — '+sc),{{displayModeBar:false,responsive:true}});
+  {{x:f.year,y:kt(f.p10),mode:'lines',fill:'tonexty',fillcolor:'rgba(16,185,129,0.20)',line:{{width:0}},name:'P10–P90',hovertemplate:'P10 %{{y:.1f}}<extra></extra>'}},
+  {{x:f.year,y:kt(f.p50),mode:'lines',line:{{color:'#059669',width:3}},name:'Trung vị P50',hovertemplate:'P50 %{{y:.1f}} nghìn tấn<extra></extra>'}}],lay('Pin Li hết hạn — '+sc),{{displayModeBar:false,responsive:true}});
  const s=SEG[sc];
  Plotly.react('seg',['e2W-Chì','e2W-Li','Ô tô-Li'].map(k=>({{type:'bar',x:s[k].year,y:kt(s[k].eol_t),name:L[k],marker:{{color:C[k],line:{{color:bg,width:1}}}},hovertemplate:L[k]+': %{{y:.1f}}<extra></extra>'}})),Object.assign(lay('Theo phân khúc (likely)'),{{barmode:'stack'}}),{{displayModeBar:false,responsive:true}});
  const d=SK[sc],lab=d.nodes.map(n=>n.replace('e2W-Li','Xe máy pin Li').replace('e2W-Chì','Xe máy ắc quy chì').replace('Ô tô-Li','Ô tô pin Li'));
- Plotly.react('sankey',[{{type:'sankey',arrangement:'snap',node:{{label:lab,pad:16,thickness:14,color:'#52514e'}},link:{{source:d.links.map(l=>l.source),target:d.links.map(l=>l.target),value:d.links.map(l=>l.value/1000),color:'rgba(42,120,214,0.25)',hovertemplate:'%{{source.label}} → %{{target.label}}: %{{value:.1f}} nghìn tấn<extra></extra>'}}}}],{{paper_bgcolor:bg,font:{{color:ink,size:12}},margin:{{l:8,r:8,t:8,b:8}}}},{{displayModeBar:false,responsive:true}});
+ Plotly.react('sankey',[{{type:'sankey',arrangement:'snap',node:{{label:lab,pad:16,thickness:14,color:'#0e7490'}},link:{{source:d.links.map(l=>l.source),target:d.links.map(l=>l.target),value:d.links.map(l=>l.value/1000),color:'rgba(16,185,129,0.28)',hovertemplate:'%{{source.label}} → %{{target.label}}: %{{value:.1f}} nghìn tấn<extra></extra>'}}}}],{{paper_bgcolor:bg,font:{{color:ink,size:12}},margin:{{l:8,r:8,t:8,b:8}}}},{{displayModeBar:false,responsive:true}});
+ const at=(o,y)=>o.p50[o.year.indexOf(y)]/1000, fmt=v=>v.toFixed(1).replace('.',','), c10=CROSS.find(r=>r.scenario===sc&&r.threshold_kt===10);
+ document.getElementById('stats').innerHTML=`<div class="kpi"><b>${{fmt(at(f,2030))}} nghìn t</b><span>pin Li hết hạn năm 2030 (P50)</span></div><div class="kpi"><b>${{fmt(at(f,2035))}} nghìn t</b><span>pin Li hết hạn năm 2035 (P50)</span></div><div class="kpi"><b>${{c10.year_p10}}–${{c10.year_p90}}</b><span>năm vượt 10 nghìn tấn/năm (P10–P90)</span></div><div class="kpi"><b>${{fmt(at(FAN[sc]['Chì_eol_t'],2030))}} nghìn t</b><span>ắc quy chì hết hạn năm 2030 (P50)</span></div>`;
  document.getElementById('cross').innerHTML='<tr><th>Ngưỡng (nghìn tấn/năm)</th><th>Năm (likely)</th><th>P10–P90</th></tr>'+CROSS.filter(r=>r.scenario===sc).map(r=>`<tr><td>${{r.threshold_kt}}</td><td>${{r.year_likely}}</td><td>${{r.year_p10}}–${{r.year_p90}}</td></tr>`).join('');
 }}
 document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>draw(b.dataset.sc));draw('Cơ sở');
