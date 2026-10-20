@@ -1,10 +1,10 @@
 id,risk,probability(1-5),impact(1-5),score,response,owner,status
 RSK-01,Dự thảo sửa đổi Luật BVMT và nghị định đổi tỷ lệ tái chế pin xe điện khác dự kiến (8% từ 2029),3,4,12,"Tỷ lệ, Fs, thời hạn là tham số cấu hình (NFR); kịch bản chính sách trong ASM-17 và business case",Người thực hiện,Mở
 RSK-02,Thiếu số liệu doanh số xe máy điện chính xác 2022–2024,4,3,12,"Tam giác hóa ICCT, VinFast 20-F, IEA; trình bày min/likely/max (ASM-02, ASM-03)",Người thực hiện,Mở
-RSK-03,Giả định tuổi thọ pin quyết định kết quả,4,4,16,"Tuổi thọ là tham số trung tâm của phân tích độ nhạy S11; trình bày dải dự báo",Người thực hiện,Mở
+RSK-03,Giả định tuổi thọ pin quyết định kết quả,4,4,16,Tuổi thọ là tham số trung tâm của phân tích độ nhạy S11; trình bày dải dự báo,Người thực hiện,Mở
 RSK-04,Khu vực phi chính thức không có dữ liệu,5,3,15,Trình bày phần không quan sát được thành một phát hiện và ước lượng theo khoảng (ASM-11),Người thực hiện,Mở
 RSK-05,Không có số công suất tái chế pin Li trong nước,5,3,15,Trả lời RQ3 theo ngưỡng công suất (DEC-07),Người thực hiện,Mở
 RSK-06,Mô hình AI SoH kém chính xác khi áp sang pack xe máy điện,3,3,9,"Model card nêu giới hạn; SRS đặc tả ngưỡng, độ bất định và luồng người duyệt",Người thực hiện,Mở
-RSK-07,Bị hiểu là tư vấn pháp lý,2,4,8,"Miễn trừ trên mọi tài liệu pháp lý; mọi yêu cầu kèm điều khoản gốc",Người thực hiện,Mở
-RSK-08,Lạc sang kỹ thuật pin quá sâu,2,2,4,"Giữ ở mức BA: SoH chỉ là đầu vào cho quyết định điều phối",Người thực hiện,Mở
-RSK-09,Mức Fs hiện hành của ắc quy chì chưa xác minh từ văn bản gốc,3,2,6,"Dùng khoảng ASM-15; đánh dấu Unverified; đổi khi có văn bản",Người thực hiện,Mở
+RSK-07,Bị hiểu là tư vấn pháp lý,2,4,8,Miễn trừ trên mọi tài liệu pháp lý; mọi yêu cầu kèm điều khoản gốc,Người thực hiện,Mở
+RSK-08,Lạc sang kỹ thuật pin quá sâu,2,2,4,Giữ ở mức BA: SoH chỉ là đầu vào cho quyết định điều phối,Người thực hiện,Mở
+RSK-09,Định mức Fs của TT 07/2025 (theo NĐ 08/2022) bị thay khi Bộ ban hành Fs mới theo NĐ 110/2026,3,2,6,"Fs đã xác minh từ Phụ lục IXa TT 07/2025 (SRC-023); Fs là tham số theo năm (PAR-10), đổi không cần sửa phần mềm; theo dõi LQ-01",Người thực hiện,Mở

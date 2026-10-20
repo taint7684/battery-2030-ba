@@ -21,7 +21,7 @@ Mỗi nhóm Phụ lục I được chọn một hình thức riêng mỗi năm (
 | Khối lượng | Thị phần VELIX × dự báo S9 (Cơ sở) | 5% | 3–8% | ASM-13 |
 | Nghĩa vụ | R ắc quy chì | 12% | giữ nguyên | REQ-VN-15 |
 | Nghĩa vụ | R pin Li: 3 kịch bản chính sách | 0% / 8% → 15% / 10% → 20% | — | ASM-17 |
-| Đóng quỹ | Fs chì / Fs Li | 18.278 / 25.000 đ/kg | 15–22 nghìn / 15–40 nghìn | ASM-15, ASM-16 |
+| Đóng quỹ | Fs chì (B.1.1) / Fs pin sạc (B.2.1) | 18.278 / 54.876 đ/kg | 18.278–20.106 / 40.000–60.364 | ASM-15, ASM-16 (TT 07/2025 Phụ lục IXa) |
 | Nền tảng | Đầy đủ / tối giản | 3,5 tỷ + 0,7 tỷ/năm / 0,8 tỷ + 0,2 tỷ/năm | — | ASM-21 |
 | Thu gom | Li / chì | 9.000 / 4.000 đ/kg | 6–15 / 2–6 nghìn | ASM-22 |
 | Xử lý pin Li | Phí ròng trả đơn vị tái chế | 12.000 đ/kg | 5–20 nghìn | ASM-23 |
@@ -44,8 +44,8 @@ NPV chi phí 2027–2035, triệu đồng, giá trị likely (âm = có lãi) �
 |---|---|---|---|---|---|
 | Mọi kịch bản | Ắc quy chì | −29.239 | 25.204 | 19.202 | A |
 | Hiện hành (0%) | Pin Li | −8.279 | 869 | 869 | A |
-| Dự thảo (8% → 15%) | Pin Li | −8.279 | 19.187 | 14.607 | A |
-| Cao (10% → 20%) | Pin Li | −8.279 | 24.895 | 18.888 | A |
+| Dự thảo (8% → 15%) | Pin Li | −8.279 | 41.078 | 31.026 | A |
+| Cao (10% → 20%) | Pin Li | −8.279 | 53.607 | 40.423 | A |
 
 Xác suất mỗi phương án rẻ nhất, 2.000 lượt Monte Carlo — [mc_best_option.csv](outputs/mc_best_option.csv):
 
@@ -53,8 +53,8 @@ Xác suất mỗi phương án rẻ nhất, 2.000 lượt Monte Carlo — [mc_be
 |---|---|---|---|---|
 | Mọi kịch bản | Ắc quy chì | 100% | 0% | 0% |
 | Hiện hành (0%) | Pin Li | 60% | 40% | 0% |
-| Dự thảo | Pin Li | 85,5% | 0% | 14,5% |
-| Cao | Pin Li | 89,8% | 0% | 10,2% |
+| Dự thảo | Pin Li | 97,0% | 0% | 3,0% |
+| Cao | Pin Li | 99,1% | 0% | 0,9% |
 
 Khoảng P10–P90 của NPV(A) pin Li theo dự thảo: −33,4 đến +20,7 tỷ đồng — rộng, đổi dấu ([mc_npv_quantiles.csv](outputs/mc_npv_quantiles.csv)).
 
@@ -64,12 +64,12 @@ Khoảng P10–P90 của NPV(A) pin Li theo dự thảo: −33,4 đến +20,7 t�
 
 ![Tornado pin Li](outputs/fig-tornado-li.png)
 
-Ba tham số lớn nhất đều thuộc **thị trường đời thứ hai** (giá bán, tỷ lệ đủ điều kiện, chi phí tân trang). Thị phần và Fs xếp sau.
+Tham số lớn nhất là **giá bán pin đời thứ hai**, tiếp theo là thị phần, tỷ lệ đủ điều kiện và chi phí tân trang. Fs pin Li xếp thứ 7 vì đã có định mức công bố nên khoảng biến thiên hẹp.
 
 | Điểm hòa vốn (pin Li, các tham số khác ở likely) | Giá trị | Nguồn |
 |---|---|---|
-| Giá pin đời thứ hai để A = B, chính sách dự thảo | ≈ 669 nghìn đ/kWh | [breakeven.json](outputs/breakeven.json) |
-| Giá pin đời thứ hai để A = C, chính sách dự thảo | ≈ 724 nghìn đ/kWh | — |
+| Giá pin đời thứ hai để A = B, chính sách dự thảo | ≈ 405 nghìn đ/kWh | [breakeven.json](outputs/breakeven.json) |
+| Giá pin đời thứ hai để A = C, chính sách dự thảo | ≈ 526 nghìn đ/kWh | — |
 | Giá pin đời thứ hai để A = B, chính sách hiện hành (0%) | ≈ 890 nghìn đ/kWh | — |
 | Giá ắc quy chì phế liệu để A = B | ≈ 350 đ/kg (xa dưới mọi mức hợp lý) | — |
 
@@ -90,14 +90,14 @@ Ba tham số lớn nhất đều thuộc **thị trường đời thứ hai** (g
 
 1. **Ắc quy chì — chọn A ngay từ năm trách nhiệm 2026:** đăng ký "Tổ chức tái chế", cách thức "Hợp đồng đơn vị tái chế" có phép nhóm B.1.1. Thu hồi qua đại lý, bán phế liệu chì. Phần thu hồi vượt R × V được bảo lưu (REQ-VN-13).
 2. **Pin Li — xây nền tảng và mạng thu hồi ngay, nhưng quyết định hình thức 2029–2031 trước 30/6/2028 (OBJ-5):** năm 2026–2028 R = 0 nên không phát sinh tiền phải nộp. Dùng 2027–2028 để thu dữ liệu giá đời thứ hai thật và tỷ lệ thu hồi thật.
-3. **Quy tắc đổi hướng cho pin Li:** nếu giá bán pin đời thứ hai đo được trong thí điểm dưới **~0,7 triệu đ/kWh**, hoặc tỷ lệ đủ điều kiện dưới 20%, chuyển pin Li sang **C (PRO)** cho chu kỳ 2029–2031; vẫn giữ nền tảng cho ắc quy chì.
+3. **Quy tắc đổi hướng cho pin Li:** nếu giá bán pin đời thứ hai đo được trong thí điểm dưới **~0,5 triệu đ/kWh**, hoặc tỷ lệ đủ điều kiện dưới 20%, chuyển pin Li sang **C (PRO)** cho chu kỳ 2029–2031; vẫn giữ nền tảng cho ắc quy chì.
 4. **Đầu tư nền tảng theo giai đoạn:** MVP đủ cho ắc quy chì (hoàn vốn từ năm đầu theo likely); hạng mục đời thứ hai (US-17) và mô hình SoH tự động (DEC-11) chỉ mở khi có dữ liệu thí điểm.
 
 ## 7. Khi nào KHÔNG đáng làm phương án A
 
 | Điều kiện | Hệ quả | Theo dõi bằng |
 |---|---|---|
-| Giá pin đời thứ hai < ~0,67 triệu đ/kWh (dự thảo) hoặc < ~0,89 triệu (chính sách 0%) | A cho pin Li đắt hơn B/C | KPI giá bán đời thứ hai |
+| Giá pin đời thứ hai < ~0,53 triệu đ/kWh (dự thảo, so với C) hoặc < ~0,89 triệu (chính sách 0%, so với B) | A cho pin Li đắt hơn B/C | KPI giá bán đời thứ hai |
 | VELIX phải trả tiền cho khách để cạnh tranh với người thu mua ắc quy chì, mức trả gần bằng giá phế liệu trừ chi phí thu gom (~6.000 đ/kg) | Lợi thế của A với ắc quy chì biến mất | Tỷ lệ thu hồi ắc quy chì thực tế |
 | Không có đơn vị tái chế pin Li có phép trong nước và phí xuất khẩu xử lý > 20.000 đ/kg | Chi phí pin Li không đủ điều kiện đời thứ hai tăng | Báo giá đơn vị tái chế |
 | Dự thảo không được ban hành, R pin Li giữ 0% sau 2029 | Xác suất A tốt nhất cho pin Li chỉ còn 60% | Theo dõi văn bản (RSK-01) |

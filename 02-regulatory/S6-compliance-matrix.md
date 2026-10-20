@@ -64,7 +64,7 @@ Mã phân hệ nền tảng (định nghĩa ở SRS S14): MOD-REG Sổ đăng k�
 
 | Mã | Câu hỏi | Ảnh hưởng | Cách xử lý tạm |
 |---|---|---|---|
-| LQ-01 | Mức Fs hiện hành của ắc quy chì là bao nhiêu (văn bản gốc)? | Phương án B của business case | Dùng ASM-15 (18.278 đ/kg, Unverified) |
+| LQ-01 | Định mức Fs của TT 07/2025/TT-BTNMT (ban hành theo NĐ 08/2022) có tiếp tục áp dụng sau NĐ 110/2026 đến khi Bộ ban hành mức mới không? | Phương án B của business case | Dùng Phụ lục IXa TT 07/2025: chì 18.278, pin sạc 54.876 đ/kg (SRC-023; ASM-15, ASM-16) |
 | LQ-02 | Pin Li thải từ xe máy điện có thuộc danh mục chất thải nguy hại cần chứng từ CTNH khi vận chuyển không? | Chi phí logistics, mẫu chứng từ | Thiết kế theo mẫu chứng từ CTNH (REQ-VN-21) — phương án an toàn |
 | LQ-03 | Pin đời thứ hai bán lại trong nước có phải đăng ký là sản phẩm mới đưa ra thị trường không? | Ai chịu EPR cho pin đời thứ hai | Áp nguyên tắc EU Art. 56(2): đơn vị đưa ra thị trường chịu EPR (ghi nhận, không bắt buộc) |
 | LQ-04 | Dự thảo sửa đổi Luật BVMT (trình Quốc hội 10/2026) có thêm chỉ tiêu thu gom pin xe điện không? | Phạm vi MOD-EPR | Tham số hóa chỉ tiêu (D-EPR-1) |

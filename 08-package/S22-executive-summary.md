@@ -17,7 +17,7 @@ Làn sóng pin Li hết hạn bắt đầu thật sự từ **2029–2030**, tr�
 | RQ4 | Dự báo chắc đến đâu? | Đổi tuổi thọ ±2 năm làm mốc ngưỡng dịch ~1 năm, lượng 2030 đổi −32% đến +69%. Sai số chủ yếu đến từ thông số pin, không phải doanh số. Khớp số VinFast nộp SEC (5/5 phép kiểm) và ước tính World Bank (lệch 1%) | [S11](../03-forecast/S11-critique.md) |
 | RQ5 | Nền tảng cần làm gì? | 8 phân hệ, 33 FR, 11 NFR, 30 BR; MVP 25 user story kịp hạn nộp hồ sơ 01/4/2027. Prototype 14 màn hình, **73/73 test case tự động đạt** | [S14](../04-solution/S14-srs.md), [S20](../06-test/S20-test-plan.md) |
 | RQ6 | AI ước lượng SoH có dùng được không? | Đạt độ chính xác (MAE 2,53 điểm; độ phủ 88,5%) nhưng **chưa đạt yêu cầu vận hành** (94,6% pin vẫn phải đo tay). MVP chạy mô hình song song; bật tự động khi đạt AIR-03/04 trên dữ liệu pack VELIX | [S17](../05-ai-soh/S17-model-card.md), DEC-11 |
-| RQ7 | Tự làm, đóng quỹ hay PRO? | Ắc quy chì: tự tổ chức thắng ở 100% lượt mô phỏng. Pin Li: tự tổ chức thắng ở 60–90% lượt tùy chính sách; hòa vốn khi giá pin đời thứ hai ≈0,67 triệu đ/kWh (dự thảo) | [S21](../07-business-case/S21-business-case.md) |
+| RQ7 | Tự làm, đóng quỹ hay PRO? | Ắc quy chì: tự tổ chức thắng ở 100% lượt mô phỏng. Pin Li: tự tổ chức thắng ở 60–99% lượt tùy chính sách; theo dự thảo, giá pin đời thứ hai dưới ≈0,53 triệu đ/kWh thì PRO rẻ hơn | [S21](../07-business-case/S21-business-case.md) |
 
 ## Ba việc cần quyết định
 

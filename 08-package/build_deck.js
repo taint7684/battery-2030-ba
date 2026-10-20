@@ -121,9 +121,9 @@ s.addChart(pres.charts.BAR, [
     showLegend: true, legendPos: 'b', legendFontSize: 12, legendFontFace: '+mn-lt', catAxisLabelColor: '52514E', valAxisLabelColor: '52514E', catAxisLabelFontFace: '+mn-lt', valAxisLabelFontFace: '+mn-lt',
     valGridLine: { color: 'E4E3DF', size: 0.5 }, catGridLine: { style: 'none' }, objectName: 'npv-chart' });
 stat(s, 8.8, 1.5, '100%', 'lượt mô phỏng A rẻ nhất cho ắc quy chì', C.accent3);
-stat(s, 8.8, 3.6, '0,67 tr', 'đ/kWh — giá pin đời thứ hai hòa vốn A = B cho pin Li', C.accent2);
+stat(s, 8.8, 3.6, '0,53 tr', 'đ/kWh — giá pin đời thứ hai hòa vốn A = C cho pin Li (dự thảo)', C.accent2);
 s.addText('Giả định giá trị kinh tế có mức tin cậy Thấp, trình bày theo khoảng', { x: 8.8, y: 5.7, w: 3.9, h: 0.8, fontSize: 13, color: C.accent5, isTextBox: true, margin: 0 });
-s.addNotes('2.000 lượt Monte Carlo. Pin Li theo dự thảo: A rẻ nhất 85,5%, C 14,5%. Theo chính sách 0%: A 60%, B 40%.');
+s.addNotes('2.000 lượt Monte Carlo. Pin Li theo dự thảo: A rẻ nhất 97,0%, C 3,0%. Fs pin sạc 54.876 đ/kg theo TT 07/2025. Theo chính sách 0%: A 60%, B 40%.');
 // 10
 s = pres.addSlide({ masterName: 'CONTENT', sectionTitle: 'Business case' });
 s.addText('Ba quyết định và lộ trình', { placeholder: 'title' });
@@ -137,7 +137,7 @@ steps.forEach(([d, t], i) => {
   s.addText(t, { x, y: 3.25, w: 2.3, h: 1.6, fontSize: 14, color: C.text1, align: 'center', valign: 'top', isTextBox: true, margin: 0 });
 });
 s.addShape(pres.shapes.LINE, { x: 1.75, y: 2.2, w: 9.9, h: 0, line: { color: 'C9D1CD', width: 1.5 }, objectName: 'timeline' });
-s.addText('Quy tắc đổi hướng: giá pin đời thứ hai < ~0,7 triệu đ/kWh hoặc tỷ lệ đủ điều kiện < 20% → pin Li chuyển sang PRO', { x: 0.6, y: 5.3, w: 12.1, h: 0.9, fontSize: 16, color: C.text1, isTextBox: true, margin: 0 });
+s.addText('Quy tắc đổi hướng: giá pin đời thứ hai < ~0,5 triệu đ/kWh hoặc tỷ lệ đủ điều kiện < 20% → pin Li chuyển sang PRO', { x: 0.6, y: 5.3, w: 12.1, h: 0.9, fontSize: 16, color: C.text1, isTextBox: true, margin: 0 });
 // 11
 pres.addSection({ title: 'Kết' });
 s = pres.addSlide({ masterName: 'DARK', sectionTitle: 'Kết' });

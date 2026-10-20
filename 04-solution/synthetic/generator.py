@@ -271,8 +271,8 @@ params = {
     "PAR-11": {"name": "Hạn nộp hồ sơ / nộp tiền (năm sau năm trách nhiệm)", "value": "01/04 · 20/04", "unit": ""},
 }
 regulation = [  # PAR-10: tham so quy dinh theo nam trach nhiem va nhom
-    {"year": 2026, "group": "B.1.1", "R": 0.12, "Fs": 18278, "basis": "NĐ 110/2026 Phụ lục I; Fs: ASM-15 (Unverified)"},
-    {"year": 2026, "group": "B.2.1", "R": 0.0, "Fs": 0, "basis": "NĐ 110/2026 Phụ lục I (0%)"},
+    {"year": 2026, "group": "B.1.1", "R": 0.12, "Fs": 18278, "basis": "NĐ 110/2026 Phụ lục I; Fs: TT 07/2025 Phụ lục IXa (ASM-15)"},
+    {"year": 2026, "group": "B.2.1", "R": 0.0, "Fs": 54876, "basis": "NĐ 110/2026 Phụ lục I (0%); Fs: TT 07/2025 Phụ lục IXa (ASM-16)"},
 ]
 epr_choice = [{"year": 2026, "group": "B.1.1", "form": "Tổ chức tái chế", "method": "Hợp đồng đơn vị tái chế"},
               {"year": 2026, "group": "B.2.1", "form": "Tổ chức tái chế", "method": "Kết hợp"}]

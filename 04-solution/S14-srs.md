@@ -128,7 +128,7 @@ X = được dùng · R = chỉ xem · — = không có quyền
 | PAR-07 | Ngưỡng SoH đời thứ hai | 70% | SRC-008, ASM-10 |
 | PAR-08 | Ngưỡng chênh lệch khối lượng | 2% | BR-16 |
 | PAR-09 | Thời hạn lưu trữ hồ sơ | 10 năm | NFR-06 |
-| PAR-10 | Bảng R, Fs theo năm và nhóm | 2026: B.1.1 R 12%, Fs 18.278 đ/kg (Unverified); B.2.1 R 0% | REQ-VN-15, 16; ASM-15 |
+| PAR-10 | Bảng R, Fs theo năm và nhóm | 2026: B.1.1 R 12%, Fs 18.278 đ/kg; B.2.1 R 0%, Fs 54.876 đ/kg (TT 07/2025 Phụ lục IXa, SRC-023) | REQ-VN-15, 16; ASM-15 |
 | PAR-11 | Hạn nộp hồ sơ / nộp tiền | 01/04 · 20/04 năm sau | REQ-VN-22, 26, 27 |
 
 ## 9. Dữ liệu và giao tiếp

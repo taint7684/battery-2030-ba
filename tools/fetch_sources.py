@@ -21,6 +21,7 @@ FILES = [
     (DATA / "icct-2026-vn-ev-policies.pdf", "https://theicct.org/wp-content/uploads/2026/05/ID-516-%E2%80%93-Vietnam-EV-policies_policy-brief_final.pdf", {"User-Agent": "Mozilla/5.0"}),  # SRC-020
     (DATA / "icct-2025-2w-baseline.pdf", "https://theicct.org/wp-content/uploads/2025/02/ID-250-%E2%80%93-Vietnam-two-wheelers_report_final.pdf", {"User-Agent": "Mozilla/5.0"}),  # SRC-021
     (DATA / "icct-2022-e2w-growth.pdf", "https://theicct.org/wp-content/uploads/2022/10/asia-pacific-lvs-NDC-TIA-E2W-mkt-growth-Vietnam-nov22.pdf", {"User-Agent": "Mozilla/5.0"}),  # SRC-022
+    (REG / "tt07-2025/TT-07-2025-TT-BTNMT.pdf", "https://vasep.com.vn/DATA/DOCUMENT/2025/03/vanha/Th%C3%B4ng%20t%C6%B0-07-2025-TT-BTNMT.pdf", {"User-Agent": "Mozilla/5.0"}),  # SRC-023
     (NASA / "nasa-battery.zip", "https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip", {}),              # SRC-016
 ]
 

@@ -4,7 +4,7 @@
 
 | Yếu tố | Dữ kiện | Tác động lên dự án | Nguồn |
 |---|---|---|---|
-| **P** Chính trị | Chỉ thị 20/CT-TTg: Hà Nội không còn xe máy xăng trong Vành đai 1 từ 01/7/2026, Vành đai 1–2 từ 01/01/2028, mở rộng Vành đai 3 từ 2030; triển khai theo giai đoạn | Doanh số xe máy điện tăng nhanh → dòng pin hết hạn sau 2030 lớn hơn | SRC-017 (Unverified) |
+| **P** Chính trị | Chỉ thị 20/CT-TTg: Hà Nội không còn xe máy xăng trong Vành đai 1 từ 01/7/2026, Vành đai 1–2 từ 01/01/2028, mở rộng Vành đai 3 từ 2030; triển khai theo giai đoạn | Doanh số xe máy điện tăng nhanh → dòng pin hết hạn sau 2030 lớn hơn | SRC-017 (trích nguyên văn trên cổng nhà nước) |
 | **E** Kinh tế | Xe máy điện VN tăng hơn gấp đôi năm 2025, ~735 nghìn xe, >20% doanh số xe hai bánh; VinFast giao 406.498 xe hai bánh năm 2025, 143.136 xe Q1/2026 | Quy mô pin đưa ra thị trường đủ lớn để cân nhắc tự tổ chức thu hồi | SRC-005, SRC-011 |
 | **E** Kinh tế | Chưa đủ pin thải để vận hành nhà máy tái chế hiệu quả (lý do chính sách nêu) | Lợi thế quy mô của PRO so với từng hãng tự làm | SRC-008 |
 | **S** Xã hội | ~60% xe máy điện bán mỗi năm dùng ắc quy chì; tái chế ắc quy chì thủ công, thiếu an toàn | Rủi ro sức khỏe cộng đồng; áp lực truyền thông lên hãng | SRC-020 |

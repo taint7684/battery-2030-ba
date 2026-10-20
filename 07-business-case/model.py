@@ -19,8 +19,8 @@ YEARS = list(range(2027, 2036))
 # (min, likely, max) theo so ghi gia dinh
 A = {
     "share": (0.03, 0.05, 0.08),                       # ASM-13
-    "fs_pb": (15000, 18278, 22000),                     # ASM-15 dong/kg
-    "fs_li": (15000, 25000, 40000),                     # ASM-16
+    "fs_pb": (18278, 18278, 20106),                     # ASM-15 dong/kg (TT 07/2025 Phu luc IXa, B.1.1)
+    "fs_li": (40000, 54876, 60364),                     # ASM-16 (TT 07/2025 Phu luc IXa, B.2.1)
     "plat_full_capex": (2500, 3500, 5000), "plat_full_opex": (500, 700, 1000),   # ASM-21 trieu dong
     "plat_lite_capex": (500, 800, 1200), "plat_lite_opex": (150, 200, 300),
     "collect_li": (6000, 9000, 15000), "collect_pb": (2000, 4000, 6000),          # ASM-22 dong/kg
