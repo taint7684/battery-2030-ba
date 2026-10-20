@@ -1,0 +1,69 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Battery 2030 — Case study</title><style>:root{--bg:#f6f6f3;--panel:#fff;--ink:#16201c;--ink2:#52514e;--muted:#6f6e69;--line:#e1e2dd;--accent:#1f6f5c;--blue:#2a78d6;--orange:#eb6834;--aqua:#1baf7a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121614;--panel:#1b201e;--ink:#e7ece9;--ink2:#b8bfbb;--muted:#9aa29e;--line:#2c3330;--accent:#5cc3a6;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 64px}header.hero{padding:32px 0 16px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(28px,4.5vw,40px);line-height:1.15;margin:8px 0}h2{font-size:22px;margin:40px 0 10px}h3{font-size:17px;margin:20px 0 6px}
+p.lead{font-size:18px;color:var(--ink2);max-width:70ch}.links{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.links a,.btn{display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.links a.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:26px}.kpi span{color:var(--ink2);font-size:14px}figure{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
+figure img{width:100%;height:auto;display:block}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+ol.steps{padding-left:20px}.note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:12px;min-height:380px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.bar button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}</style></head><body><div class="wrap">
+<header class="hero"><div class="eyebrow">Case study · Business Analysis · Kinh tế tuần hoàn</div>
+<h1>Battery 2030: pin xe điện hết hạn ở Việt Nam đi đâu, và doanh nghiệp nên chuẩn bị gì?</h1>
+<p class="lead">Thiết kế nền tảng quản lý vòng đời và trách nhiệm thu hồi pin cho một hãng xe máy điện giả định (VELIX), từ văn bản luật đến dự báo, đặc tả, prototype kiểm thử tự động và business case.</p>
+<div class="links"><a href="forecast.html">Dashboard dự báo</a><a href="prototype/index.html">Prototype click được</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba/blob/main/08-package/S22-executive-summary.md">Tóm tắt điều hành</a><a class="ghost" href="https://github.com/taint7684/battery-2030-ba">Mã nguồn và tài liệu</a></div></header>
+<div class="kpis">
+<div class="kpi"><b>≈15 nghìn tấn</b><span>pin Li hết hạn năm 2030 (P10–P90: 11–20)</span></div>
+<div class="kpi"><b>≈71 nghìn tấn</b><span>năm 2035 — gấp gần 5 lần 2030</span></div>
+<div class="kpi"><b>0% → 8%?</b><span>tỷ lệ tái chế bắt buộc pin Li hiện hành → dự thảo từ 2029</span></div>
+<div class="kpi"><b>73/73</b><span>test case tự động đạt trên prototype</span></div></div>
+
+<h2>1. Bài toán</h2>
+<p>Xe điện ở Việt Nam tăng mạnh từ 2025, nên khoảng 5–10 năm sau sẽ có một làn sóng pin hết hạn. Nhưng chưa ai biết bao nhiêu pin đã bán ra, pin nào sắp hết hạn và đi qua kênh nào. Nghị định 110/2026/NĐ-CP (hiệu lực 25/5/2026) đặt tỷ lệ tái chế bắt buộc <b>0%</b> cho pin Li của phương tiện giao thông và <b>12%</b> cho ắc quy chì; tỷ lệ được điều chỉnh lần đầu năm 2029.</p>
+
+<h2>2. Phát hiện chính</h2>
+<ol class="steps">
+<li><b>Mốc 2029 của chính sách trùng với năm pin Li hết hạn vượt 10 nghìn tấn/năm</b> (P10–P90: 2029–2030, cả 3 kịch bản). Lập luận "chưa đủ pin thải để vận hành nhà máy" đúng đến khoảng 2028, sau đó hết đúng.</li>
+<li><b>Ắc quy chì mới là bài toán hiện tại:</b> ≈33 nghìn tấn/năm đến 2030, lớn hơn pin Li cho tới 2033.</li>
+<li><b>Khoảng 70% pin hết hạn năm 2030 đi kênh không có chứng từ</b> (ước lượng theo khoảng). Muốn tăng đời thứ hai, đòn bẩy là thu hồi chính thức: 45% pin Li đủ điều kiện kỹ thuật, nhưng chỉ ≈16% thực sự đến được đời thứ hai.</li>
+<li><b>Việt Nam đo "khối lượng đã tái chế", EU đo "tỷ lệ thu gom":</b> 6 khoảng trống ⛔ (thu hồi, chỉ tiêu thu gom, đời thứ hai, dữ liệu SoH, passport, chi phí đầy đủ).</li>
+<li><b>Business case:</b> tự tổ chức thu hồi thắng cho ắc quy chì ở 100% lượt mô phỏng; với pin Li, kết quả phụ thuộc giá pin đời thứ hai (hòa vốn ≈0,67 triệu đ/kWh theo dự thảo).</li></ol>
+<figure><img src="img/fig-li-fan.png" alt="Dự báo pin Li hết hạn 2025–2035, ba kịch bản"><figcaption>Dự báo cohort × Weibull, 1.000 lượt Monte Carlo mỗi kịch bản.</figcaption></figure>
+
+<h2>3. Phương pháp</h2>
+<div class="tw"><table><tr><th>Bước</th><th>Kỹ thuật</th><th>Sản phẩm</th></tr>
+<tr><td>Pháp lý</td><td>Bóc tách yêu cầu nguyên văn; ma trận khoảng trống VN × EU</td><td>31 REQ-VN, 28 REQ-EU, 18 GAP</td></tr>
+<tr><td>Discovery</td><td>BACCM, PESTLE/SWOT, stakeholder/RACI, persona, phỏng vấn giả lập, BPMN As-Is, 5 Whys</td><td>S1–S7</td></tr>
+<tr><td>Dự báo</td><td>Cohort × Weibull có thay pin và thải bỏ xe; Monte Carlo; phân tích dòng vật chất</td><td>S8–S10</td></tr>
+<tr><td>Phản biện</td><td>Tuổi thọ ±2 năm, tornado, đối chiếu VinFast 20-F và World Bank, phần không quan sát được</td><td>S11</td></tr>
+<tr><td>Thiết kế</td><td>BPMN To-Be, SRS 29148, 30 BR theo EARS, bảng quyết định, ERD, OpenAPI, story map</td><td>S12–S16</td></tr>
+<tr><td>AI</td><td>Ước lượng SoH (NASA PCoE), khoảng tin cậy CQR, yêu cầu AI có người duyệt</td><td>S17–S18</td></tr>
+<tr><td>Kiểm thử</td><td>73 test case Playwright (EP, BVA, bảng quyết định, chuyển trạng thái), RTM kiểm bằng máy</td><td>S19–S20</td></tr>
+<tr><td>Business case</td><td>NPV 3 phương án × 3 chính sách, Monte Carlo, điểm hòa vốn, ma trận quyết định</td><td>S21</td></tr></table></div>
+
+<h2>4. Quy trình mục tiêu</h2>
+<figure><img src="img/to-be.png" alt="BPMN quy trình To-Be"><figcaption>Thu hồi → đánh giá SoH → điều phối → bàn giao → báo cáo EPR; mỗi bước gắn mã quy tắc nghiệp vụ.</figcaption></figure>
+
+<h2>5. Prototype</h2>
+<div class="grid2"><figure><img src="img/04-tiep-nhan.png" alt="Màn tiếp nhận pin"><figcaption>Tiếp nhận pin: nhận mọi hãng, miễn phí, checklist an toàn.</figcaption></figure>
+<figure><img src="img/10-bao-cao-epr.png" alt="Màn báo cáo EPR"><figcaption>Báo cáo EPR: V, R × V, kết quả, bảo lưu, F theo tham số năm.</figcaption></figure></div>
+
+<h2>6. AI có kiểm soát</h2>
+<p>Mô hình ước lượng SoH đạt sai số trung bình 2.53 điểm % và độ phủ khoảng tin cậy 88.5%, nhưng <b>chưa đạt yêu cầu vận hành</b>: 94.6% pin vẫn phải đo tay ở ngưỡng 70%. Quyết định: MVP chạy mô hình song song, chỉ bật tự động khi đạt yêu cầu trên dữ liệu pack thật.</p>
+<figure><img src="img/fig-pred-b0006.png" alt="Dự đoán SoH và khoảng tin cậy"><figcaption>Cell để riêng khi huấn luyện; khoảng tin cậy 90% bằng Conformalized Quantile Regression.</figcaption></figure>
+
+<h2>7. Business case</h2>
+<figure><img src="img/fig-npv.png" alt="NPV chi phí theo phương án"><figcaption>Âm = có lãi. Giá trị likely, chính sách dự thảo.</figcaption></figure>
+<p>Khuyến nghị: ắc quy chì chọn tự tổ chức tái chế ngay từ năm trách nhiệm 2026; pin Li xây nền tảng và mạng thu hồi ngay, quyết định hình thức 2029–2031 trước 30/6/2028 dựa trên giá pin đời thứ hai đo thực tế.</p>
+
+<footer><p>Dữ liệu doanh nghiệp là giả lập; VELIX là tên hư cấu. Đây là phân tích nghiệp vụ, không phải tư vấn pháp lý. Nguồn: Nghị định 110/2026/NĐ-CP, Luật BVMT 2020, Regulation (EU) 2023/1542, ICCT, VinFast Form 20-F, NASA PCoE, Battery Pass consortium (CC BY 4.0).</p></footer>
+</div></body></html>

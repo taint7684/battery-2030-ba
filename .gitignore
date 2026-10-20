@@ -1,0 +1,10 @@
+# Du lieu tho va van ban ben thu ba: khong commit. Tai lai bang lenh trong README tung thu muc.
+02-regulatory/raw/
+03-forecast/data/raw/
+05-ai-soh/data/raw/
+*.pdf
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store

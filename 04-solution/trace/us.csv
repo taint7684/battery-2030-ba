@@ -1,0 +1,28 @@
+id,epic,role,story,fr,priority,release,wsjf
+US-01,EP-01 Sổ đăng ký pin,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn đăng ký model pin một lần để hệ thống tự gán nhóm Phụ lục I và nhóm EU cho mọi pin của model đó.",FR-01,Must,MVP,8
+US-02,EP-01 Sổ đăng ký pin,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn mỗi pin bán ra hoặc xuất thay thế được cấp mã định danh duy nhất để truy được pin đến khi tái chế.",FR-02,Must,MVP,10
+US-03,EP-01 Sổ đăng ký pin,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn đánh dấu pin xuất khẩu, thử nghiệm hoặc đã có EPR của nhà cung cấp để khối lượng V không bị tính sai.",FR-03,Must,MVP,7
+US-04,EP-01 Sổ đăng ký pin,Kỹ thuật viên,"Là kỹ thuật viên, tôi muốn tra cứu pin theo mã, model, trạng thái để tìm nhanh hồ sơ.",FR-04,Must,MVP,5
+US-05,EP-02 Thu hồi,Kho vận,"Là kho vận, tôi muốn quản lý điểm thu hồi và hồ sơ chủ nguồn thải để chỉ điểm đủ điều kiện mới nhận pin.",FR-05,Must,MVP,6
+US-06,EP-02 Thu hồi,Đại lý,"Là trưởng dịch vụ đại lý, tôi muốn tiếp nhận pin của mọi hãng trong vài bước, không thu phí khách, để khách trả pin thay vì bán đồng nát.",FR-06,Must,MVP,10
+US-07,EP-02 Thu hồi,Đại lý,"Là trưởng dịch vụ đại lý, tôi muốn checklist an toàn tự cảnh báo pin nguy hiểm để cách ly ngay.",FR-06,Must,MVP,9
+US-08,EP-02 Thu hồi,Đại lý,"Là trưởng dịch vụ đại lý, tôi muốn tiếp nhận được khi mất mạng để không phải hẹn khách quay lại.",FR-07,Should,R2,4
+US-09,EP-02 Thu hồi,Kho vận,"Là kho vận, tôi muốn nhận đề xuất gom lô khi điểm thu hồi gần đầy hoặc giữ pin quá hạn để không để pin tồn lâu.",FR-08; FR-33,Must,MVP,7
+US-10,EP-05 Đối tác và bàn giao,Kho vận,"Là kho vận, tôi muốn lập lô và chứng từ giao nhận có danh sách pin để bàn giao cho đơn vị tái chế.",FR-09,Must,MVP,8
+US-11,EP-05 Đối tác và bàn giao,Đơn vị tái chế,"Là nhân viên tiếp nhận ở đơn vị tái chế, tôi muốn xác nhận khối lượng cân và ghi chênh lệch để chứng từ khớp từng ký.",FR-09,Must,MVP,7
+US-12,EP-02 Thu hồi,Người dùng xe,"Là người dùng xe, tôi muốn tra cứu điểm trả pin gần tôi và cách thải pin an toàn.",FR-10,Should,MVP,5
+US-13,EP-03 Đánh giá SoH,Kỹ thuật viên,"Là kỹ thuật viên, tôi muốn thấy SoH ước lượng kèm độ tin cậy và danh sách pin cần đo tay để chỉ đo những pin cần đo.",FR-11; FR-12,Must,MVP,9
+US-14,EP-03 Đánh giá SoH,Kỹ thuật viên,"Là kỹ thuật viên, tôi muốn nhập kết quả đo tay hoặc ghi đè kết quả có lý do để hồ sơ SoH phản ánh đúng thực tế.",FR-13; FR-32,Must,MVP,7
+US-15,EP-04 Điều phối,Kỹ thuật viên,"Là kỹ thuật viên, tôi muốn hệ thống đề xuất hướng điều phối theo quy tắc để quyết định nhất quán.",FR-14,Must,MVP,9
+US-16,EP-04 Điều phối,Trưởng dịch vụ,"Là trưởng dịch vụ, tôi muốn phê duyệt quyết định Đời thứ hai do người khác đề xuất để kiểm soát rủi ro bán pin yếu.",FR-15,Must,MVP,6
+US-17,EP-04 Điều phối,Kho vận,"Là kho vận, tôi muốn bàn giao pin đời thứ hai kèm hợp đồng và hồ sơ SoH để bên nhận có đủ bằng chứng.",FR-16; FR-29,Should,R2,4
+US-18,EP-05 Đối tác và bàn giao,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn quản lý giấy phép đối tác và bị chặn bàn giao khi giấy phép không hợp lệ để không vi phạm REQ-VN-19.",FR-17; FR-18,Must,MVP,9
+US-19,EP-05 Đối tác và bàn giao,Đơn vị tái chế,"Là đơn vị tái chế, tôi muốn xác nhận pin đã tái chế theo quy cách để khối lượng được tính vào kết quả của VELIX.",FR-19; FR-30,Must,MVP,8
+US-20,EP-06 Báo cáo EPR,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn cấu hình R, Fs, hạn nộp và ngưỡng vận hành theo năm để không phải chờ sửa phần mềm khi quy định đổi.",FR-20; FR-33,Must,MVP,8
+US-21,EP-06 Báo cáo EPR,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn chọn hình thức thực hiện cho mỗi nhóm pin mỗi năm để hệ thống tính đúng nghĩa vụ.",FR-21,Must,MVP,7
+US-22,EP-06 Báo cáo EPR,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn thấy V, khối lượng phải tái chế, kết quả, bảo lưu và số tiền F để lập hồ sơ có căn cứ.",FR-22; FR-23,Must,MVP,10
+US-23,EP-06 Báo cáo EPR,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn xuất hồ sơ nộp và được nhắc hạn để không trễ hạn 01/4 và 20/4.",FR-24; FR-25,Must,MVP,8
+US-24,EP-06 Báo cáo EPR,Ban điều hành,"Là ban điều hành, tôi muốn xem tỷ lệ thu gom, kết quả điều phối và việc sắp đến hạn trên một trang.",FR-26,Should,MVP,6
+US-25,EP-07 Hồ sơ pin,Kỹ thuật viên,"Là kỹ thuật viên hoặc đối tác đời thứ hai, tôi muốn xem hồ sơ pin và dòng thời gian sự kiện để biết lịch sử pin.",FR-27; FR-28,Should,MVP,6
+US-26,EP-08 Quản trị,Quản trị hệ thống,"Là quản trị, tôi muốn gán vai trò và phạm vi dữ liệu để mỗi người chỉ thấy dữ liệu của mình.",FR-31,Must,MVP,7
+US-27,EP-08 Quản trị,Cán bộ tuân thủ,"Là cán bộ tuân thủ, tôi muốn tra nhật ký kiểm toán để giải trình khi cơ quan đối chiếu số liệu.",FR-32,Must,MVP,5

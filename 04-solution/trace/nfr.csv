@@ -1,0 +1,12 @@
+id,category,requirement,metric,source,verification
+NFR-01,Hiệu năng,Thao tác tiếp nhận một pin tại điểm thu hồi (từ mở form đến lưu phiếu) không quá 3 phút với người dùng đã được hướng dẫn; mỗi màn hình phản hồi trong 2 giây ở phân vị 95 với 1 triệu hồ sơ pin.,≤3 phút; ≤2 s p95,INT-02; NEED-03,Kiểm thử (TC-071) + đo thời gian ở UAT
+NFR-02,Ngoại tuyến,Thiết bị tại điểm thu hồi lưu được ít nhất 200 phiếu khi mất kết nối và đồng bộ không tạo phiếu trùng.,≥200 phiếu; 0 phiếu trùng,BR-30,Kiểm thử (TC-018)
+NFR-03,Sẵn sàng,"Hệ thống sẵn sàng 99,5% mỗi tháng trong giờ 07:00–21:00.","99,5%",S1 §4,Phân tích kiến trúc + giám sát vận hành
+NFR-04,Bảo mật,Mã hóa đường truyền TLS 1.2 trở lên; mật khẩu lưu dạng băm có muối; xác thực hai lớp cho vai trò Tuân thủ và Quản trị.,100% phiên,S14 §5,Kiểm tra cấu hình + kiểm thử bảo mật ở SIT
+NFR-05,Quyền riêng tư,Chỉ thu thông tin cá nhân của người trả pin khi cần liên hệ và có đồng ý; cổng công khai không hiển thị dữ liệu cá nhân; tuân thủ pháp luật bảo vệ dữ liệu cá nhân hiện hành.,0 trường cá nhân trên cổng công khai,BR-28,Kiểm thử (TC-023)
+NFR-06,Lưu vết,"Nhật ký kiểm toán không cho sửa, xóa; lưu tối thiểu theo PAR-09.",10 năm,BR-14; BR-26,"Kiểm thử (TC-031, TC-069)"
+NFR-07,Liên thông,Mã định danh tương thích ISO/IEC 15459; xuất hồ sơ pin dạng JSON theo tên thuộc tính Battery Pass Data Model v1.2; API REST mô tả bằng OpenAPI 3.,Kiểm bằng lược đồ,REQ-EU-21; SRC-015,Kiểm thử (TC-008) + kiểm lược đồ OpenAPI
+NFR-08,Cấu hình,"Thay R, Fs, hạn nộp, ngưỡng vận hành không cần phát hành phần mềm mới.",0 lần sửa mã,D-EPR-1; DEC-08,"Kiểm thử (TC-049, TC-051)"
+NFR-09,Khả dụng,Màn hình tiếp nhận dùng được trên điện thoại rộng 360 px; giao diện tiếng Việt.,360 px,INT-02,Kiểm thử (TC-070)
+NFR-10,Đa tenant,Dữ liệu tách theo nhà sản xuất; truy vấn không trả dữ liệu của tenant khác.,0 bản ghi chéo,BR-27,Kiểm thử (TC-068)
+NFR-11,Sao lưu,"Sao lưu hằng ngày; mục tiêu điểm khôi phục 24 giờ, thời gian khôi phục 8 giờ.",RPO 24 h; RTO 8 h,S1 §4,Diễn tập khôi phục ở UAT

@@ -1,0 +1,221 @@
+openapi: 3.0.3
+info:
+  title: Battery 2030 API (bản nháp)
+  version: 0.1.0
+  description: >
+    Giao tiếp của nền tảng Battery 2030 với ERP, thiết bị tại điểm thu hồi, mô hình SoH và đối tác.
+    Mọi yêu cầu có tiêu đề X-Tenant-Id (BR-27). Mã lỗi theo RFC 7807 (application/problem+json).
+servers:
+  - url: https://api.battery2030.example/v1
+security:
+  - oauth2: []
+tags:
+  - name: Registry
+  - name: Collection
+  - name: SoH
+  - name: Partner
+  - name: EPR
+paths:
+  /batteries:
+    post:
+      tags: [Registry]
+      summary: Đăng ký pin từ đơn bán ERP (FR-02, BR-01, BR-02)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SaleEvent' }
+      responses:
+        '201': { description: Đã cấp mã, content: { application/json: { schema: { $ref: '#/components/schemas/Battery' } } } }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Invalid' }
+    get:
+      tags: [Registry]
+      summary: Tra cứu sổ đăng ký (FR-04)
+      parameters:
+        - { name: q, in: query, schema: { type: string } }
+        - { name: model, in: query, schema: { type: string } }
+        - { name: status, in: query, schema: { $ref: '#/components/schemas/BatteryStatus' } }
+        - { name: year, in: query, schema: { type: integer } }
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+      responses:
+        '200': { description: Danh sách, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Battery' } } } } }
+  /batteries/{uid}/passport:
+    get:
+      tags: [Registry]
+      summary: Hồ sơ pin theo tên thuộc tính Battery Pass v1.2 — 39 trường MVP (FR-27, NFR-07)
+      parameters: [ { $ref: '#/components/parameters/Uid' } ]
+      responses:
+        '200': { description: Hồ sơ pin, content: { application/json: { schema: { type: object, additionalProperties: true } } } }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /intakes:
+    post:
+      tags: [Collection]
+      summary: Gửi phiếu tiếp nhận (FR-06, FR-07). Idempotent theo intake_id (BR-30)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Intake' }
+      responses:
+        '201': { description: Đã ghi nhận }
+        '200': { description: Phiếu đã tồn tại — không tạo trùng (BR-30) }
+        '403': { description: Điểm thu hồi chưa kích hoạt (BR-09) }
+        '409': { description: Pin không ở trạng thái Đang lưu hành }
+  /soh-estimates:
+    post:
+      tags: [SoH]
+      summary: Gọi mô hình ước lượng SoH (AIR-05)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BmsReading' }
+      responses:
+        '200': { description: Kết quả, content: { application/json: { schema: { $ref: '#/components/schemas/SohEstimate' } } } }
+  /batches:
+    post:
+      tags: [Partner]
+      summary: Lập lô bàn giao (FR-09, BR-15, BR-16)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [kind, to_id, battery_uids]
+              properties:
+                kind: { type: string, enum: [GOM_VE_TRUNG_TAM, BAN_GIAO_DOI_TAC] }
+                to_id: { type: string }
+                battery_uids: { type: array, items: { type: string }, minItems: 1 }
+      responses:
+        '201': { description: Lô đã lập, content: { application/json: { schema: { $ref: '#/components/schemas/Batch' } } } }
+        '422': { description: Giấy phép đơn vị nhận không hợp lệ (BR-15) }
+  /batches/{batchId}/weighing:
+    post:
+      tags: [Partner]
+      summary: Bên nhận xác nhận khối lượng cân (BR-16)
+      parameters: [ { name: batchId, in: path, required: true, schema: { type: string } } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [received_kg]
+              properties:
+                received_kg: { type: number, minimum: 0 }
+                variance_reason: { type: string, description: Bắt buộc khi chênh lệch > PAR-08 }
+      responses:
+        '200': { description: Đã xác nhận }
+        '422': { description: Thiếu lý do chênh lệch }
+  /batches/{batchId}/recycled:
+    post:
+      tags: [Partner]
+      summary: Xác nhận đã tái chế theo quy cách (BR-17, BR-26)
+      parameters: [ { name: batchId, in: path, required: true, schema: { type: string } } ]
+      responses:
+        '200': { description: Pin trong lô chuyển Đã tái chế, hồ sơ đóng }
+  /epr-reports/{year}:
+    get:
+      tags: [EPR]
+      summary: Báo cáo EPR năm (RPT-01)
+      parameters: [ { name: year, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        '200': { description: Báo cáo, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/EprLine' } } }, text/csv: { schema: { type: string } } } }
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials: { tokenUrl: https://auth.battery2030.example/token, scopes: {} }
+  parameters:
+    Uid: { name: uid, in: path, required: true, schema: { type: string, pattern: '^[A-Z]+-[A-Z0-9]+-\d{2}-\d{7}-\d$' } }
+  responses:
+    Conflict: { description: Xung đột dữ liệu, content: { application/problem+json: { schema: { $ref: '#/components/schemas/Problem' } } } }
+    Invalid: { description: Dữ liệu không hợp lệ, content: { application/problem+json: { schema: { $ref: '#/components/schemas/Problem' } } } }
+    NotFound: { description: Không tìm thấy, content: { application/problem+json: { schema: { $ref: '#/components/schemas/Problem' } } } }
+  schemas:
+    Problem:
+      type: object
+      properties: { type: { type: string }, title: { type: string }, detail: { type: string }, rule: { type: string, example: BR-15 } }
+    BatteryStatus:
+      type: string
+      enum: [Đang lưu hành, Đã thu hồi, Đã đánh giá, Đời thứ hai, Chờ tái chế, Đã bàn giao, Đã tái chế, Đã hủy đăng ký]
+    SaleEvent:
+      type: object
+      required: [model_code, placed_date, kind]
+      properties:
+        model_code: { type: string }
+        placed_date: { type: string, format: date }
+        vin: { type: string }
+        kind: { type: string, enum: [Theo xe, Thay thế] }
+        erp_ref: { type: string }
+    Battery:
+      type: object
+      properties:
+        battery_uid: { type: string, example: VLX-LF48-26-0001234-4 }
+        model_code: { type: string }
+        category_vn: { type: string, enum: [B.1.1, B.2.1, B.2.1-khác] }
+        category_eu: { type: string, enum: [LMT, Pin xe điện] }
+        placed_date: { type: string, format: date }
+        status: { $ref: '#/components/schemas/BatteryStatus' }
+        passport_status: { type: string, enum: [original, repurposed, waste] }
+        flags: { type: array, items: { type: string } }
+        hazard: { type: boolean }
+        parent_uid: { type: string, nullable: true }
+    Intake:
+      type: object
+      required: [intake_id, point_id, intake_at, weight_kg, checklist]
+      properties:
+        intake_id: { type: string, example: P01-D1-0042 }
+        point_id: { type: string }
+        battery_uid: { type: string, nullable: true, description: Rỗng khi pin hãng khác }
+        other_brand: { type: boolean }
+        other_chemistry: { type: string, enum: [Chì, LFP, NMC] }
+        intake_at: { type: string, format: date-time }
+        weight_kg: { type: number }
+        checklist: { type: array, items: { type: string, enum: [Phồng, Rò rỉ, Nứt vỏ, Đã va chạm, Nóng bất thường] } }
+        bms: { $ref: '#/components/schemas/BmsReading' }
+    BmsReading:
+      type: object
+      properties:
+        battery_uid: { type: string }
+        remaining_capacity_ah: { type: number }
+        resistance_increase_pct: { type: number }
+        full_cycles: { type: integer }
+        deep_discharge_events: { type: integer }
+        hours_extreme_temp: { type: number }
+    SohEstimate:
+      type: object
+      required: [soh_pct, ci_low_pct, ci_high_pct, model_version, missing_fields]
+      properties:
+        soh_pct: { type: number }
+        ci_low_pct: { type: number }
+        ci_high_pct: { type: number }
+        model_version: { type: string, example: soh-demo-0.1 }
+        missing_fields: { type: array, items: { type: string } }
+    Batch:
+      type: object
+      properties:
+        batch_id: { type: string, example: CT-2026-0007 }
+        kind: { type: string }
+        to_id: { type: string }
+        sent_kg: { type: number }
+        received_kg: { type: number, nullable: true }
+        status: { type: string, enum: [Đã gửi, Đã xác nhận cân, Đã tái chế] }
+    EprLine:
+      type: object
+      properties:
+        year: { type: integer }
+        group: { type: string }
+        form: { type: string }
+        method: { type: string }
+        V_kg: { type: number }
+        R: { type: number }
+        required_kg: { type: number }
+        result_kg: { type: number }
+        carryover_kg: { type: number }
+        Fs_vnd_per_kg: { type: number }
+        F_vnd: { type: integer }
+        basis: { type: string }

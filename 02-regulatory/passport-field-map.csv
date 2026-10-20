@@ -1,0 +1,94 @@
+bp_no,category,sub_category,attribute,eu_ev,eu_lmt,regulation_ref,vn_epr_need,platform_scope,platform_field,data_source
+1,Identifiers and product data,Identifier,Battery passport identifier,Bắt buộc,Bắt buộc,Art. 77(3); Art. 3(66); Art. 38(6),—,MVP,passport.passport_id,Hệ thống sinh
+2,Identifiers and product data,Identifier,Battery identifier,Bắt buộc,Bắt buộc,"Annex XIII (1a) Annex VI Part A, Art. 38(6)",Định danh pin đưa ra thị trường,MVP,battery.battery_uid,Hệ thống sinh
+3,Identifiers and product data,Identifier,Operator identifier and information,Tự nguyện,Tự nguyện,"The operator identifier is introduced in the ESPR (ESPR, Annex III(h)), but not mandatory for batteries.",—,Giai đoạn 2,—,—
+4,Identifiers and product data,Identifier,Manufacturer identifier and information,Bắt buộc,Bắt buộc,Annex VI Part A (1); Art. 3(33); Art. 38(7); ESPR Art. 2(32),Bên chịu trách nhiệm EPR,MVP,battery_model.manufacturer,Nhà sản xuất khai báo khi đăng ký model
+5,Identifiers and product data,Product data,Manufacturing place,Bắt buộc,Bắt buộc,"Annex XIII (1a); Annex VI, Part A(3); Annex XIII (1)",—,MVP,battery_model.manufacturing_place,Nhà sản xuất khai báo khi đăng ký model
+6,Identifiers and product data,Product data,Manufacturing date,Bắt buộc,Bắt buộc,Annex XIII (1a); Annex VI Part A (4); Annex VII Part B (1),Năm đưa ra thị trường (năm có trách nhiệm),MVP,battery.manufacturing_date,Nhà sản xuất khai báo khi đăng ký model
+7,Identifiers and product data,Product data,Date of putting the battery into service,—,Bắt buộc,Annex VII Part B (1),—,MVP,battery.put_into_service_date,Nhà sản xuất khai báo khi đăng ký model
+8,Identifiers and product data,Product data,Warranty period of the battery,Bắt buộc,Bắt buộc,Annex XIII (1m),—,MVP,battery_model.warranty_months,Nhà sản xuất khai báo khi đăng ký model
+9,Identifiers and product data,Product data,Battery category,Bắt buộc,Bắt buộc,Annex XIII (1a); Annex VI Part A (2),Nhóm Phụ lục I NĐ 110,MVP,battery_model.category_vn,Nhà sản xuất khai báo khi đăng ký model
+10,Identifiers and product data,Product data,Battery mass,Bắt buộc,Bắt buộc,Annex XIII (1a); Annex VI Part A (5),V — khối lượng (kg) trong F = R × V × Fs,MVP,battery_model.mass_kg,Nhà sản xuất khai báo khi đăng ký model
+11,Identifiers and product data,Product data,Battery status,Bắt buộc,Bắt buộc,Annex XIII 4(c),Trạng thái để tính khối lượng thu hồi/tái chế,MVP,battery.passport_status,Hệ thống sinh
+12,"Symbols, labels and documentation of conformity",-,Separate collection symbol,Bắt buộc,Bắt buộc,Annex XIII (1s); Art. 13(4);  Annex VI Part B,—,Ngoài phạm vi,—,—
+13,"Symbols, labels and documentation of conformity",-,Symbols for cadmium and lead,Bắt buộc,Bắt buộc,Annex XIII (1s) Art. 13(5);,—,Ngoài phạm vi,—,—
+14,"Symbols, labels and documentation of conformity",-,Carbon footprint label,Tự nguyện,Tự nguyện,Article 7(2) via Annex XIII (1c),—,Ngoài phạm vi,—,—
+15,"Symbols, labels and documentation of conformity",-,Extinguishing agent,Bắt buộc,Bắt buộc,Annex VI Part A (9),—,Ngoài phạm vi,—,—
+16,"Symbols, labels and documentation of conformity",-,Meaning of labels and symbols,Bắt buộc,Bắt buộc,Annex XIII (1s);Art. 74 1(e),—,Ngoài phạm vi,—,—
+17,"Symbols, labels and documentation of conformity",-,EU declaration of conformity,Bắt buộc,Bắt buộc,Annex XIII (1r); Art. 18; Annex IX,—,Ngoài phạm vi,—,—
+18,"Symbols, labels and documentation of conformity",-,Results of test reports proving compliance,Bắt buộc,Bắt buộc,Annex XIII (3); Annex VIII Part A 2(h),—,Ngoài phạm vi,—,—
+19,Battery carbon footprint,-,Battery carbon footprint per Functional Unit,Bắt buộc,Bắt buộc,Annex XIII (1c) → Art. 7,—,Ngoài phạm vi,—,—
+20,Battery carbon footprint,-,Contribution of raw material acquisition and pre-processing lifecycle stage,Bắt buộc,Bắt buộc,Annex XIII (1c) → Art. 7,—,Ngoài phạm vi,—,—
+21,Battery carbon footprint,-,Contribution of main product production/manufacturing lifecycle stage,Bắt buộc,Bắt buộc,Annex XIII (1c) → Art. 7,—,Ngoài phạm vi,—,—
+22,Battery carbon footprint,-,Contribution of distribution lifecycle stage,Bắt buộc,Bắt buộc,Annex XIII 1(c) → Art. 7,—,Ngoài phạm vi,—,—
+23,Battery carbon footprint,-,Contribution of end of life and recycling lifecycle stage,Bắt buộc,Bắt buộc,Annex XIII (1c) → Art. 7,—,Ngoài phạm vi,—,—
+24,Battery carbon footprint,-,Carbon footprint performance class,Bắt buộc,Bắt buộc,Annex XIII (1c); Art. 7(2),—,Ngoài phạm vi,—,—
+25,Battery carbon footprint,-,Web link to public carbon footprint study,Bắt buộc,Bắt buộc,Annex XIII (1c); Art. 7 1(g),—,Ngoài phạm vi,—,—
+26,Battery carbon footprint,-,General battery and manufacturer information,Bắt buộc,Bắt buộc,"Annex XIII, Article 7(1)",—,Ngoài phạm vi,—,—
+27,Battery carbon footprint,-,Absolute battery carbon footprint,Tự nguyện,Tự nguyện,n.a.,—,Ngoài phạm vi,—,—
+28,Supply chain due diligence,-,Information of due diligence report,Bắt buộc,Bắt buộc,Art. 52(3),—,Ngoài phạm vi,—,—
+29,Supply chain due diligence,-,Third party assurances of recognised schemes,Tự nguyện,Tự nguyện,Art. 49(d),—,Ngoài phạm vi,—,—
+30,Supply chain due diligence,-,Supply chain indices,Tự nguyện,Tự nguyện,n.a.,—,Ngoài phạm vi,—,—
+31,Battery materials and composition,-,Battery chemistry,Bắt buộc,Bắt buộc,Annex XIII (1b); Annex VI Part A (7),Phân nhóm Li / NiMH / chì theo Phụ lục I,MVP,battery_model.chemistry,Nhà sản xuất khai báo khi đăng ký model
+32,Battery materials and composition,-,Critical raw materials,Bắt buộc,Bắt buộc,Annex XIII (1b); Annex VI Part A (10),—,Giai đoạn 2,—,—
+33,Battery materials and composition,-,"Materials used in cathode, anode and electrolyte",Bắt buộc,Bắt buộc,Annex XIII (2a),—,Giai đoạn 2,—,—
+34,Battery materials and composition,-,Hazardous substances,Bắt buộc,Bắt buộc,Annex XIII (1b); Annex VI Part A (8),—,MVP,battery_model.hazardous_substances,Nhà sản xuất khai báo khi đăng ký model
+35,Battery materials and composition,-,"Impact of substances on environment, human health, safety, persons",Bắt buộc,Bắt buộc,Annex XIII (1s); Art. 74 1(f),—,Giai đoạn 2,—,—
+36,Circularity and resource efficiency,Circularity information,Dismantling information: Manuals for the removal and the disassembly of the battery pack,Bắt buộc,Bắt buộc,Annex XIII (2c),—,MVP,battery_model.dismantling_doc_url,Nhà sản xuất khai báo khi đăng ký model
+37,Circularity and resource efficiency,Circularity information,Part numbers for components,Bắt buộc,Bắt buộc,Annex XIII (2b),—,Giai đoạn 2,—,—
+38,Circularity and resource efficiency,Circularity Information,Information on sources of spare parts,Bắt buộc,Bắt buộc,Annex XIII (2b),—,Giai đoạn 2,—,—
+39,Circularity and resource efficiency,Circularity information,Safety measures,Bắt buộc,Bắt buộc,Annex XIII (2d); Art. 74(2),—,MVP,battery_model.safety_doc_url,Nhà sản xuất khai báo khi đăng ký model
+40,Circularity and resource efficiency,Recycled and renewable content,Pre-consumer recycled nickel share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+41,Circularity and resource efficiency,Recycled and renewable content,Pre-consumer recycled cobalt share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+42,Circularity and resource efficiency,Recycled and renewable content,Pre-consumer recycled lithium share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+43,Circularity and resource efficiency,Recycled and renewable content,Pre-consumer recycled lead share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+44,Circularity and resource efficiency,Recycled and renewable content,Post-consumer recycled nickel share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+45,Circularity and resource efficiency,Recycled and renewable content,Post-consumer recycled cobalt share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+46,Circularity and resource efficiency,Recycled and renewable content,Post-consumer recycled lithium share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+47,Circularity and resource efficiency,Recycled and renewable content,Post-consumer recycled lead share,Bắt buộc,Bắt buộc,Annex XIII (1e); Art. 8(1),—,Ngoài phạm vi,—,—
+48,Circularity and resource efficiency,Recycled and renewable content,Renewable content share,Bắt buộc,Bắt buộc,Annex XIII (1f),—,Ngoài phạm vi,—,—
+49,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life",Information on the role of end-users in contributing to waste prevention,Bắt buộc,Bắt buộc,Art. 74(1a),—,MVP,public_content.end_user_info,Nhà sản xuất khai báo khi đăng ký model
+50,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life",Information on the role of end-users in contributing to the separate collection of waste batteries,Bắt buộc,Bắt buộc,Art. 74(1b),—,MVP,public_content.end_user_info,Nhà sản xuất khai báo khi đăng ký model
+51,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life","Information on battery collection, preparation for second life and on treatment at end of life",Bắt buộc,Bắt buộc,Art. 74(1c),—,MVP,public_content.end_user_info,Nhà sản xuất khai báo khi đăng ký model
+52,Performance and durability,"Capacity, energy, and voltage",Rated capacity,Bắt buộc,Bắt buộc,Annex XIII (1g); Annex IV Part A (1) (definition),—,MVP,battery_model.capacity_ah,Nhà sản xuất khai báo khi đăng ký model
+53,Performance and durability,"Capacity, energy, and voltage",Remaining capacity,Tự nguyện,Bắt buộc,Annex VII Part A (1),—,MVP,soh_assessment.remaining_capacity_ah,Đọc BMS khi tiếp nhận / mô hình SoH
+54,Performance and durability,"Capacity, energy, and voltage",Capacity fade,Bắt buộc,Bắt buộc,Annex IV Part A (2),—,Giai đoạn 2,—,—
+55,Performance and durability,"Capacity, energy, and voltage",Certified usable battery energy,Tự nguyện,—,n.a.,—,Giai đoạn 2,—,—
+56,Performance and durability,"Capacity, energy, and voltage",Remaining usable battery energy,Tự nguyện,—,n.a.,—,Giai đoạn 2,—,—
+57,Performance and durability,"Capacity, energy, and voltage",State of certified energy (SOCE),Bắt buộc,—,Annex VII Part A (EV),—,MVP,soh_assessment.soce_pct,Đọc BMS khi tiếp nhận / mô hình SoH
+58,Performance and durability,"Capacity, energy, and voltage",State of Charge (SoC),Bắt buộc,Bắt buộc,Annex XIII (4d); Article 3 1(27),—,MVP,soh_assessment.soc_pct,Đọc BMS khi tiếp nhận / mô hình SoH
+59,Performance and durability,"Capacity, energy, and voltage",Minimum voltage,Bắt buộc,Bắt buộc,Annex XIII (1h),—,Giai đoạn 2,—,—
+60,Performance and durability,"Capacity, energy, and voltage",Maximum voltage,Bắt buộc,Bắt buộc,Annex XIII (1h),—,Giai đoạn 2,—,—
+61,Performance and durability,"Capacity, energy, and voltage",Nominal voltage,Bắt buộc,Bắt buộc,Annex XIII (1h),—,MVP,battery_model.voltage_v,Nhà sản xuất khai báo khi đăng ký model
+62,Performance and durability,Power capability,Original power capability,Bắt buộc,Bắt buộc,"Annex XIII (1i); Art. 10, Annex IV Part B (4) → measurement at 80 % SoC and 20% SoC required",—,MVP,battery_model.original_power_w,Nhà sản xuất khai báo khi đăng ký model
+63,Performance and durability,Power capability,Remaining power capability,Tự nguyện,Bắt buộc,"Art. 10: Annex IV (3) (only definition of power); Annex VII Part A (2) ""where possible, remaining power capability""; Annex IV Part B (4) --> measurement at 80 % SoC and 20% SoC required",—,MVP,soh_assessment.remaining_power_w,Đọc BMS khi tiếp nhận / mô hình SoH
+64,Performance and durability,Power capability,Power fade,Bắt buộc,Bắt buộc,"Annex IV P(4) (""power fade"" definition); Annex IV Part A (4) (power fade in %) Annex IV Part B (4) → measurement at 80 % SoC required",—,Giai đoạn 2,—,—
+65,Performance and durability,Power capability,Maximum permitted battery power,Bắt buộc,Bắt buộc,Annex XIII (1i) (power limits),—,Giai đoạn 2,—,—
+66,Performance and durability,Power capability,Ratio between nominal battery power and battery energy,Tự nguyện,Tự nguyện,Annex IV Part B (2),—,Giai đoạn 2,—,—
+67,Performance and durability,Round trip energy efficiency and self-discharge,Initial round trip energy efficiency,Bắt buộc,Bắt buộc,Annex XIII (1n); Art. 10: Annex IV (6) (definition); Annex IV Part A (4),—,Giai đoạn 2,—,—
+68,Performance and durability,Round trip energy efficiency and self-discharge,Round trip energy efficiency at 50% of cycle life,Bắt buộc,Bắt buộc,Annex XIII 1(n); Annex IV (6) (only definition),—,Giai đoạn 2,—,—
+69,Performance and durability,Round trip energy efficiency and self-discharge,Remaining round trip energy efficiency,—,Bắt buộc,Art. 10: Annex IV Part A (4) (only definition); Article 14: Annex VII Part A (3),—,Giai đoạn 2,—,—
+70,Performance and durability,Round trip energy efficiency and self-discharge,Energy round trip efficiency fade,Bắt buộc,Bắt buộc,Annex IV Part A (4),—,Giai đoạn 2,—,—
+71,Performance and durability,Round trip energy efficiency  and self-discharge,Initial self-discharge rate,—,Tự nguyện,n.a.,—,Giai đoạn 2,—,—
+72,Performance and durability,Round trip energy efficiency  and self-discharge,Current self-discharge rate,—,Tự nguyện,n.a.,—,Giai đoạn 2,—,—
+73,Performance and durability,Round trip energy efficiency  and self-discharge,Evolution of self-discharge rates,—,—,Art. 14: Annex VII Part A (4),—,Giai đoạn 2,—,—
+74,Performance and durability,Internal resistance,Initial internal resistance of battery cell and pack (module recommended),Bắt buộc,Bắt buộc,Annex XIII (1o); Art. 10: Annex IV Part A (3) (+definition of internal resistance),—,MVP,battery_model.initial_resistance_mohm,Nhà sản xuất khai báo khi đăng ký model
+75,Performance and durability,Internal resistance,Internal resistance increase of pack (cell and module recommended),Bắt buộc,Bắt buộc,"Annex IV, Part A(3)",—,MVP,soh_assessment.resistance_increase_pct,Đọc BMS khi tiếp nhận / mô hình SoH
+76,Performance and durability,Battery lifetime,Expected lifetime in calendar years,Bắt buộc,Bắt buộc,"Annex IV, Part A(5); Annex XIII (1); Annex XIII (4a)",—,MVP,battery_model.expected_life_years,Nhà sản xuất khai báo khi đăng ký model
+77,Performance and durability,Battery lifetime,Expected lifetime: Number of charge-discharge cycles,Bắt buộc,Bắt buộc,Test methods and reference conditions are subject to the ongoing standardization process at CEN/CENELEC relating to standardization request M/579.,—,MVP,battery_model.expected_life_cycles,Nhà sản xuất khai báo khi đăng ký model
+78,Performance and durability,Battery lifetime,Number of full charging and discharging cycles,Bắt buộc,Bắt buộc,Annex XIII (4d); Art. 14: Annex VII Part B (5),—,MVP,soh_assessment.full_cycles,Đọc BMS khi tiếp nhận / mô hình SoH
+79,Performance and durability,Battery lifetime,Cycle-life reference test,Bắt buộc,Bắt buộc,Annex XIII (1j),—,Giai đoạn 2,—,—
+80,Performance and durability,Battery lifetime,C-rate of relevant cycle-life test,Bắt buộc,Bắt buộc,Annex XIII (1p),—,Giai đoạn 2,—,—
+81,Performance and durability,Battery lifetime,Energy throughput,—,Bắt buộc,Annex VII Part B (2),—,MVP,soh_assessment.energy_throughput_kwh,Đọc BMS khi tiếp nhận / mô hình SoH
+82,Performance and durability,Battery lifetime,Capacity throughput,—,Bắt buộc,Annex VII Part B (3),—,MVP,soh_assessment.capacity_throughput_ah,Đọc BMS khi tiếp nhận / mô hình SoH
+83,Performance and durability,Battery lifetime,Capacity threshold for exhaustion,Bắt buộc,—,Annex XIII (1k),—,MVP,battery_model.capacity_threshold_pct,Nhà sản xuất khai báo khi đăng ký model
+84,Performance and durability,Temperature conditions,Temperature information,Bắt buộc,Bắt buộc,Annex XIII (4d),—,MVP,soh_assessment.temperature_log_ref,Đọc BMS khi tiếp nhận / mô hình SoH
+85,Performance and durability,Temperature conditions,"Temperature range idle state, lower boundary",Bắt buộc,Bắt buộc,Annex XIII (1l),—,Giai đoạn 2,—,—
+86,Performance and durability,Temperature conditions,"Temperature range idle state, upper boundary",Bắt buộc,Bắt buộc,Annex XIII (1l),—,Giai đoạn 2,—,—
+87,Performance and durability,Temperature conditions,Time spent in extreme temperatures above boundary,—,Bắt buộc,Annex VII Part B (4),—,MVP,soh_assessment.hours_above_temp,Đọc BMS khi tiếp nhận / mô hình SoH
+88,Performance and durability,Temperature conditions,Time spent in extreme temperatures below boundary,—,Bắt buộc,Annex VII Part B (4),—,MVP,soh_assessment.hours_below_temp,Đọc BMS khi tiếp nhận / mô hình SoH
+89,Performance and durability,Temperature conditions,Time spent charging during extreme temperatures above boundary,—,Bắt buộc,Annex VII Part B (4),—,MVP,soh_assessment.hours_charge_above_temp,Đọc BMS khi tiếp nhận / mô hình SoH
+90,Performance and durability,Temperature conditions,Time spent charging during extreme temperatures below boundary,—,Bắt buộc,Annex VII Part B (4),—,MVP,soh_assessment.hours_charge_below_temp,Đọc BMS khi tiếp nhận / mô hình SoH
+91,Performance and durability,Negative events,Number of deep discharge events,Tự nguyện,Bắt buộc,Annex VII Part B (4),—,MVP,soh_assessment.deep_discharge_events,Đọc BMS khi tiếp nhận / mô hình SoH
+92,Performance and durability,Negative events,Number of overcharge events,Tự nguyện,Tự nguyện,n.a.,—,Giai đoạn 2,—,—
+93,Performance and durability,Negative events,Information on accidents,Bắt buộc,Bắt buộc,Annex XIII (4d),—,MVP,intake.checklist,Người tiếp nhận khai báo

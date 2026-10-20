@@ -1,0 +1,43 @@
+{
+ "n_cycles": 576,
+ "cells": [
+  "B0005",
+  "B0006",
+  "B0007",
+  "B0018"
+ ],
+ "threshold_pct": 70.0,
+ "max_width_pts": 10.0,
+ "mae": 2.532466210815416,
+ "rmse": 3.3210686489725783,
+ "mae_baseline_cycles_only": 4.217483950705061,
+ "mae_baseline_linear_all": 2.516267004730026,
+ "coverage_90": 0.8854166666666666,
+ "mean_width": 14.40571798734564,
+ "manual_rate": 0.9461805555555556,
+ "auto_accuracy": 0.8709677419354839,
+ "accuracy_without_review": 0.7864583333333334,
+ "per_cell_mae": {
+  "B0005": 1.5121017438788336,
+  "B0006": 3.3446324075272655,
+  "B0007": 1.75052099483269,
+  "B0018": 3.6426270892904493
+ },
+ "targets": {
+  "mae_max": 3.0,
+  "coverage_min": 0.85,
+  "auto_acc_min": 0.97,
+  "manual_rate_max": 0.3
+ },
+ "pass": {
+  "AIR-01 MAE": true,
+  "AIR-02 coverage": true,
+  "AIR-03 auto accuracy": false,
+  "AIR-04 manual rate": false
+ },
+ "sensitivity_threshold_80": {
+  "manual_rate": 0.8177083333333334,
+  "auto_accuracy": 1.0,
+  "accuracy_without_review": 0.9618055555555556
+ }
+}

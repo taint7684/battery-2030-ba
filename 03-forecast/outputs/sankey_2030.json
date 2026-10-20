@@ -1,0 +1,188 @@
+{
+ "Chậm": {
+  "year": 2030,
+  "unit": "tấn",
+  "nodes": [
+   "Hết hạn: e2W-Li",
+   "Thu hồi chính thức",
+   "Phi chính thức / thất thoát",
+   "Đời thứ hai",
+   "Hết hạn: e2W-Chì",
+   "Hết hạn: Ô tô-Li",
+   "Tái chế có phép"
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 2078.2
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 3859.5
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 727.4
+   },
+   {
+    "source": 4,
+    "target": 1,
+    "value": 9114.6
+   },
+   {
+    "source": 4,
+    "target": 2,
+    "value": 24029.5
+   },
+   {
+    "source": 5,
+    "target": 1,
+    "value": 2181.6
+   },
+   {
+    "source": 5,
+    "target": 2,
+    "value": 4051.5
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 1199.9
+   },
+   {
+    "source": 1,
+    "target": 6,
+    "value": 11447.2
+   }
+  ],
+  "placed_on_market_t": 129910.9,
+  "stock_units": 7868348
+ },
+ "Cơ sở": {
+  "year": 2030,
+  "unit": "tấn",
+  "nodes": [
+   "Hết hạn: e2W-Li",
+   "Thu hồi chính thức",
+   "Phi chính thức / thất thoát",
+   "Đời thứ hai",
+   "Hết hạn: e2W-Chì",
+   "Hết hạn: Ô tô-Li",
+   "Tái chế có phép"
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 2386.5
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 4432.1
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 835.3
+   },
+   {
+    "source": 4,
+    "target": 1,
+    "value": 9061.3
+   },
+   {
+    "source": 4,
+    "target": 2,
+    "value": 23888.9
+   },
+   {
+    "source": 5,
+    "target": 1,
+    "value": 2371.1
+   },
+   {
+    "source": 5,
+    "target": 2,
+    "value": 4403.5
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 1304.1
+   },
+   {
+    "source": 1,
+    "target": 6,
+    "value": 11679.6
+   }
+  ],
+  "placed_on_market_t": 159537.4,
+  "stock_units": 9326724
+ },
+ "Nhanh": {
+  "year": 2030,
+  "unit": "tấn",
+  "nodes": [
+   "Hết hạn: e2W-Li",
+   "Thu hồi chính thức",
+   "Phi chính thức / thất thoát",
+   "Đời thứ hai",
+   "Hết hạn: e2W-Chì",
+   "Hết hạn: Ô tô-Li",
+   "Tái chế có phép"
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 2874.6
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 5338.5
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 1006.1
+   },
+   {
+    "source": 4,
+    "target": 1,
+    "value": 8989.4
+   },
+   {
+    "source": 4,
+    "target": 2,
+    "value": 23699.3
+   },
+   {
+    "source": 5,
+    "target": 1,
+    "value": 2573.1
+   },
+   {
+    "source": 5,
+    "target": 2,
+    "value": 4778.5
+   },
+   {
+    "source": 1,
+    "target": 3,
+    "value": 1415.2
+   },
+   {
+    "source": 1,
+    "target": 6,
+    "value": 12015.7
+   }
+  ],
+  "placed_on_market_t": 197885.5,
+  "stock_units": 11702347
+ }
+}

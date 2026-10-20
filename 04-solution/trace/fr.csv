@@ -1,0 +1,34 @@
+id,module,requirement,priority,source,br
+FR-01,MOD-REG,"Hệ thống phải cho phép đăng ký model pin với hóa học, dung lượng (Ah, kWh), điện áp danh định, khối lượng, nhà sản xuất, bên ghi nhãn, thời hạn bảo hành, liên kết tài liệu tháo dỡ và an toàn; và tự gán nhóm Phụ lục I và nhóm EU.",Must,NEED-01; NEED-11; GAP-01; GAP-02; GAP-07,BR-03; BR-05
+FR-02,MOD-REG,"Hệ thống phải nhận đơn bán và phiếu xuất pin thay thế từ ERP, tạo bản ghi pin với ngày đưa ra thị trường và cấp mã định danh duy nhất.",Must,NEED-02; GAP-15; REQ-VN-09,BR-01; BR-02
+FR-03,MOD-REG,"Hệ thống phải cho phép gắn cờ loại trừ (xuất khẩu, nghiên cứu/thử nghiệm) và cờ nhà cung cấp đã thực hiện EPR cho từng pin.",Must,REQ-VN-06; REQ-VN-10,BR-04
+FR-04,MOD-REG,"Hệ thống phải cho phép tra cứu sổ đăng ký pin theo mã định danh, số khung, model, nhóm, trạng thái và năm đưa ra thị trường.",Must,NEED-02,—
+FR-05,MOD-COL,"Hệ thống phải quản lý điểm thu hồi (đại lý, trạm đổi pin, đối tác) gồm địa chỉ, giờ mở cửa, sức chứa, hồ sơ chủ nguồn thải chất thải nguy hại và trạng thái kích hoạt.",Must,REQ-VN-28; GAP-05; GAP-11,BR-09
+FR-06,MOD-COL,"Hệ thống phải cho phép lập phiếu tiếp nhận pin gồm mã pin (quét hoặc nhập), pin hãng khác, checklist an toàn, khối lượng cân, ảnh và dữ liệu BMS tùy chọn, không thu phí người trả pin.",Must,NEED-03; GAP-05; REQ-EU-11,BR-06; BR-07
+FR-07,MOD-COL,"Hệ thống phải cho phép lập phiếu tiếp nhận khi mất kết nối và đồng bộ khi có kết nối.",Should,NEED-03,BR-30
+FR-08,MOD-COL,"Hệ thống phải theo dõi tồn kho từng điểm thu hồi và tạo đề xuất gom lô theo ngưỡng.",Must,NEED-04,BR-08
+FR-09,MOD-COL,"Hệ thống phải cho phép lập lô vận chuyển, sinh chứng từ giao nhận có số, và cho bên nhận xác nhận khối lượng cân với kiểm tra chênh lệch.",Must,NEED-07; REQ-VN-21; GAP-10,BR-16
+FR-10,MOD-COL,"Hệ thống phải cung cấp cổng tra cứu công khai điểm trả pin, giờ mở cửa và hướng dẫn thải pin an toàn.",Should,NEED-12; GAP-16,BR-28
+FR-11,MOD-SOH,"Hệ thống phải thu các tham số SoH theo Phụ lục VII EU 2023/1542 (dung lượng còn lại, điện trở, số chu kỳ tương đương, sự kiện xả sâu, thời gian ở nhiệt độ khắc nghiệt) từ dữ liệu BMS hoặc nhập tay.",Must,NEED-05; GAP-09; REQ-EU-14,—
+FR-12,MOD-SOH,"Hệ thống phải ước lượng SoH bằng mô hình kèm khoảng tin cậy 90% và chuyển pin sang hàng chờ đo tay theo điều kiện quy định.",Must,NEED-05; S18,BR-10
+FR-13,MOD-SOH,"Hệ thống phải cho phép ghi kết quả đo tay và ghi đè kết quả có lý do, lưu vết thay đổi.",Must,NEED-05; S18,BR-14
+FR-14,MOD-RTE,"Hệ thống phải đề xuất hướng điều phối (Đời thứ hai, Tái chế) theo bảng quyết định và chặn hướng không hợp lệ.",Must,NEED-06; GAP-08,BR-11; BR-12; BR-29
+FR-15,MOD-RTE,"Hệ thống phải yêu cầu phê duyệt quyết định Đời thứ hai bởi Trưởng dịch vụ khác người đề xuất.",Must,NEED-06,BR-13
+FR-16,MOD-RTE,"Hệ thống phải cho phép bàn giao pin đời thứ hai cho đối tác kèm số hợp đồng hoặc hóa đơn và hồ sơ SoH.",Should,NEED-06; REQ-EU-15,BR-11; BR-25
+FR-17,MOD-PTN,"Hệ thống phải quản lý đối tác (tái chế, đời thứ hai, PRO, vận chuyển) và giấy phép môi trường gồm số, ngày hiệu lực, ngày hết hạn, nhóm pin được phép.",Must,NEED-08; REQ-VN-19,BR-15
+FR-18,MOD-PTN,"Hệ thống phải chặn bàn giao lô khi giấy phép của đơn vị nhận không hợp lệ và cảnh báo giấy phép sắp hết hạn trong 60 ngày.",Must,NEED-08; D-PTN-1,BR-15
+FR-19,MOD-PTN,"Hệ thống phải cho đơn vị tái chế xác nhận đã tái chế theo quy cách và (tùy chọn) khối lượng vật liệu thu hồi.",Must,REQ-VN-14; GAP-14,BR-17; BR-26
+FR-20,MOD-EPR,"Hệ thống phải quản lý bảng tham số quy định theo năm trách nhiệm và nhóm Phụ lục I: R, Fs, hạn nộp, văn bản căn cứ.",Must,GAP-18; D-EPR-1,BR-19; BR-22
+FR-21,MOD-EPR,"Hệ thống phải cho chọn hình thức và cách thức thực hiện trách nhiệm tái chế cho mỗi nhóm trong mỗi năm.",Must,REQ-VN-17; REQ-VN-18,BR-20
+FR-22,MOD-EPR,"Hệ thống phải tính V, khối lượng phải tái chế R × V, kết quả tái chế đã xác nhận và sổ bảo lưu theo nhóm và năm.",Must,NEED-01; NEED-09,BR-04; BR-17; BR-18
+FR-23,MOD-EPR,"Hệ thống phải tính số tiền đóng góp F = R × V × Fs cho nhóm chọn đóng góp tài chính.",Must,NEED-09; REQ-VN-24; GAP-06,BR-19
+FR-24,MOD-EPR,"Hệ thống phải xuất hồ sơ kế hoạch, báo cáo kết quả hoặc kê khai đóng góp theo năm và nhóm thành tệp CSV để nộp lên Hệ thống thông tin EPR quốc gia.",Must,NEED-09; REQ-VN-22; REQ-VN-26; GAP-13,—
+FR-25,MOD-EPR,"Hệ thống phải nhắc hạn nộp hồ sơ và nộp tiền.",Must,NEED-09,BR-21
+FR-26,MOD-EPR,"Hệ thống phải hiển thị bảng điều khiển: tỷ lệ thu gom kiểu EU, phân bổ kết quả điều phối, khối lượng theo trạng thái, việc sắp đến hạn.",Should,NEED-10; GAP-04,BR-23
+FR-27,MOD-PSP,"Hệ thống phải hiển thị hồ sơ pin gồm các trường MVP của bảng ánh xạ passport và trạng thái vòng đời.",Should,NEED-11; GAP-15,BR-24
+FR-28,MOD-PSP,"Hệ thống phải hiển thị dòng thời gian sự kiện của từng pin từ khi đăng ký đến khi đóng hồ sơ.",Must,NEED-02,BR-24
+FR-29,MOD-PSP,"Hệ thống phải tạo hồ sơ mới cho pin đời thứ hai liên kết hồ sơ gốc.",Should,REQ-EU-22,BR-25
+FR-30,MOD-PSP,"Hệ thống phải đóng hồ sơ pin đã tái chế ở chế độ chỉ đọc và lưu trữ theo thời hạn cấu hình.",Must,REQ-EU-23,BR-26
+FR-31,MOD-ADM,"Hệ thống phải quản lý người dùng, vai trò và phạm vi dữ liệu (điểm thu hồi, đối tác, nhà sản xuất).",Must,S4; GAP-12,BR-27
+FR-32,MOD-ADM,"Hệ thống phải ghi nhật ký kiểm toán cho mọi thay đổi dữ liệu nghiệp vụ và cho phép tra cứu.",Must,S18; REQ-VN-22,BR-14
+FR-33,MOD-ADM,"Hệ thống phải cho quản lý tham số vận hành PAR-01 – PAR-11 mà không cần sửa mã nguồn.",Must,D-EPR-1; DEC-08,BR-08

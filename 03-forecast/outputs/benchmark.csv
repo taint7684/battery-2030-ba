@@ -1,0 +1,8 @@
+check,model,reference,source,pass
+Xe máy điện Li bán 2023 (mô hình) ≥ VinFast giao 2023,112000.0,70300,SRC-007,True
+Xe máy điện Li bán 2024 (mô hình) ≥ VinFast giao 2024,108000.0,70980,SRC-006,True
+Xe máy điện Li bán 2025 (mô hình) ≥ VinFast giao 2025,477750.0,406498,SRC-005,True
+Lũy kế xe máy Li 2015–2022 (mô hình) ≥ VinFast lũy kế đến 2022,262865.0,162000,SRC-007 (232.300 − 70.300),True
+Lũy kế xe máy Li 2015–2025 (mô hình) ≥ VinFast lũy kế xe hai bánh,960615.0,709775,SRC-005,True
+Pin Li đưa ra thị trường lũy kế 2021–2030 (GWh) so với World Bank ~100 GWh năm 2030,88.1,100,SRC-008 (thứ cấp),
+Số pin Li đưa ra thị trường năm 2030 so với World Bank ~2 triệu pin,1979618.8,2000000,SRC-008 (thứ cấp),
