@@ -29,20 +29,19 @@ sankey = json.loads((ROOT / "03-forecast/outputs/sankey_2030.json").read_text(en
 m = json.loads((ROOT / "05-ai-soh/outputs/metrics.json").read_text(encoding="utf-8"))
 tests = json.loads((ROOT / "06-test/test-results.json").read_text(encoding="utf-8"))
 
-CSS = """:root{--bg:#f3f6f9;--panel:#fff;--ink:#0f1e2b;--ink2:#46566a;--muted:#6b7a8c;--line:#e3e9f0;--accent:#059669;--accent-ink:#047857;--soft:#d8f5e8;--blue:#2563eb;--blue-soft:#e0eaff;--amber:#c2680a;--amber-soft:#fff1d6;--violet:#6d4ae0;--violet-soft:#ece7ff;--shadow:0 1px 2px rgba(15,30,43,.06),0 6px 18px rgba(15,30,43,.07);color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1520;--panel:#141f2c;--ink:#e7eef6;--ink2:#b4c1d0;--muted:#8a99ab;--line:#25344a;--accent:#34d399;--accent-ink:#6ee7b7;--soft:#123a2f;--blue:#7aa7ff;--blue-soft:#18294a;--amber:#f5b45c;--amber-soft:#3a2a12;--violet:#b4a2ff;--violet-soft:#2a2347;--shadow:none;color-scheme:dark}}
+CSS = """:root{--bg:#ffffff;--panel:#fff;--ink:#0f1e2b;--ink2:#46566a;--muted:#6b7a8c;--line:#e3e9f0;--accent:#059669;--accent-ink:#047857;--soft:#d8f5e8;--blue:#2563eb;--blue-soft:#e0eaff;--amber:#c2680a;--amber-soft:#fff1d6;--violet:#6d4ae0;--violet-soft:#ece7ff;--shadow:0 1px 2px rgba(15,30,43,.06),0 6px 18px rgba(15,30,43,.07);color-scheme:light}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif}
 .wrap{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
-header.hero{padding:36px 32px 30px;border-radius:22px;color:#fff;background:radial-gradient(1200px 300px at 90% -10%,rgba(52,211,153,.55),transparent 60%),linear-gradient(120deg,#064e3b 0%,#047857 45%,#0e7490 100%);box-shadow:0 14px 40px rgba(5,150,105,.25)}
-.eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:999px}
+header.hero{padding:32px 32px 30px;border-radius:22px;color:var(--ink);background:linear-gradient(120deg,#ecfdf5 0%,#f0f9ff 60%,#eef2ff 100%);border:1px solid #d1fae5}
+.eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent-ink);background:#fff;border:1px solid #a7f3d0;padding:4px 12px;border-radius:999px}
 h1{font-size:clamp(28px,4.6vw,44px);line-height:1.12;margin:14px 0 10px;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
-header.hero p.lead{color:rgba(255,255,255,.9)}
+header.hero p.lead{color:var(--ink2)}
 h2{font-size:24px;margin:44px 0 12px;letter-spacing:-.01em;text-wrap:balance}h3{font-size:17px;margin:20px 0 6px}
 p.lead{font-size:18px;color:var(--ink2);max-width:72ch;margin:0}
 .links{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
-.links a{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:12px;background:#fff;color:#065f46;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .12s}
-.links a:hover{transform:translateY(-1px)}.links a.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);box-shadow:none}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:-26px 18px 10px;position:relative}
+.links a{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 4px 12px rgba(5,150,105,.25);transition:transform .12s}
+.links a:hover{transform:translateY(-1px)}.links a.ghost{background:#fff;color:var(--accent-ink);border:1px solid #a7f3d0;box-shadow:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0 10px}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
 .kpi b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.2}.kpi span{color:var(--ink2);font-size:14px}
 .kpi:nth-child(1) b{color:var(--accent)}.kpi:nth-child(2) b{color:var(--blue)}.kpi:nth-child(3) b{color:var(--amber)}.kpi:nth-child(4) b{color:var(--violet)}
@@ -52,7 +51,7 @@ table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--pane
 th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--bg)}tr:last-child td{border-bottom:0}
 .tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);background:var(--panel)}
 ol.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:10px}ol.steps li{counter-increment:s;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;box-shadow:var(--shadow)}
-ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,#10b981,#0e7490)}
+ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:var(--accent)}
 .note{font-size:13px;color:var(--muted)}a{color:var(--blue)}footer{margin-top:48px;font-size:13px;color:var(--muted)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.chart{background:var(--panel);border:1px solid var(--line);border-radius:16px;min-height:390px;box-shadow:var(--shadow);overflow:hidden}
 .kpis.flat{margin:0 0 14px}
@@ -124,12 +123,12 @@ forecast = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta 
 <div class="kpis flat" id="stats"></div>
 <div class="grid2"><div id="fan" class="chart"></div><div id="seg" class="chart"></div></div>
 <h2>Năm vượt ngưỡng công suất tái chế pin Li</h2><div class="tw"><table id="cross"></table></div>
-<h2>Dòng pin hết hạn năm 2030</h2><div id="sankey" class="chart"></div>
+<h2>Dòng pin hết hạn năm 2030</h2><p class="note" style="margin:-4px 0 10px">Cam: ắc quy chì · xanh dương: pin Li xe máy · xanh ngọc: pin Li ô tô · xám: kênh phi chính thức / thất thoát. Đơn vị nghìn tấn.</p><div id="sankey" class="chart" style="min-height:480px"></div>
 <p class="note">Nguồn: 03-forecast/outputs (forecast.py, seed 2030). Phần phi chính thức là ước lượng theo khoảng, không quan sát được trực tiếp.</p></div>
 <script>
 const FAN={json.dumps(fan, ensure_ascii=False)},SEG={json.dumps(seg, ensure_ascii=False)},CROSS={json.dumps(cross, ensure_ascii=False)},SK={json.dumps(sankey, ensure_ascii=False)};
 const C={{"e2W-Li":"#2a78d6","e2W-Chì":"#eb6834","Ô tô-Li":"#1baf7a"}},L={{"e2W-Li":"Xe máy pin Li","e2W-Chì":"Xe máy ắc quy chì","Ô tô-Li":"Ô tô pin Li"}};
-const dark=matchMedia('(prefers-color-scheme: dark)').matches,ink=dark?'#e7eef6':'#0f1e2b',grid=dark?'#25344a':'#e9eef4',bg=dark?'#141f2c':'#ffffff';
+const dark=false,ink=dark?'#e7eef6':'#0f1e2b',grid=dark?'#25344a':'#e9eef4',bg=dark?'#141f2c':'#ffffff';
 const lay=t=>({{title:{{text:t,x:0.02,font:{{size:15}}}},paper_bgcolor:bg,plot_bgcolor:bg,font:{{color:ink,size:12}},margin:{{l:56,r:16,t:48,b:40}},xaxis:{{gridcolor:grid}},yaxis:{{gridcolor:grid,title:'nghìn tấn / năm'}},legend:{{orientation:'h',y:-0.15}},hovermode:'x unified'}});
 const kt=a=>a.map(v=>v/1000);
 function draw(sc){{
@@ -140,8 +139,14 @@ function draw(sc){{
   {{x:f.year,y:kt(f.p50),mode:'lines',line:{{color:'#059669',width:3}},name:'Trung vị P50',hovertemplate:'P50 %{{y:.1f}} nghìn tấn<extra></extra>'}}],lay('Pin Li hết hạn — '+sc),{{displayModeBar:false,responsive:true}});
  const s=SEG[sc];
  Plotly.react('seg',['e2W-Chì','e2W-Li','Ô tô-Li'].map(k=>({{type:'bar',x:s[k].year,y:kt(s[k].eol_t),name:L[k],marker:{{color:C[k],line:{{color:bg,width:1}}}},hovertemplate:L[k]+': %{{y:.1f}}<extra></extra>'}})),Object.assign(lay('Theo phân khúc (likely)'),{{barmode:'stack'}}),{{displayModeBar:false,responsive:true}});
- const d=SK[sc],lab=d.nodes.map(n=>n.replace('e2W-Li','Xe máy pin Li').replace('e2W-Chì','Xe máy ắc quy chì').replace('Ô tô-Li','Ô tô pin Li'));
- Plotly.react('sankey',[{{type:'sankey',arrangement:'snap',node:{{label:lab,pad:16,thickness:14,color:'#0e7490'}},link:{{source:d.links.map(l=>l.source),target:d.links.map(l=>l.target),value:d.links.map(l=>l.value/1000),color:'rgba(16,185,129,0.28)',hovertemplate:'%{{source.label}} → %{{target.label}}: %{{value:.1f}} nghìn tấn<extra></extra>'}}}}],{{paper_bgcolor:bg,font:{{color:ink,size:12}},margin:{{l:8,r:8,t:8,b:8}}}},{{displayModeBar:false,responsive:true}});
+ const d=SK[sc],NC={{"Hết hạn: e2W-Chì":"#ea580c","Hết hạn: e2W-Li":"#2563eb","Hết hạn: Ô tô-Li":"#0d9488","Thu hồi chính thức":"#059669","Phi chính thức / thất thoát":"#94a3b8","Tái chế có phép":"#0e7490","Đời thứ hai":"#16a34a"}},
+   POS={{"Hết hạn: e2W-Chì":[0.001,0.2],"Hết hạn: e2W-Li":[0.001,0.62],"Hết hạn: Ô tô-Li":[0.001,0.88],"Thu hồi chính thức":[0.42,0.72],"Phi chính thức / thất thoát":[0.999,0.25],"Tái chế có phép":[0.999,0.74],"Đời thứ hai":[0.999,0.95]}},
+   hex2=(h,a)=>'rgba('+[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)).join(',')+','+a+')',
+   lab=d.nodes.map(n=>n.replace('Hết hạn: e2W-Li','Xe máy pin Li hết hạn').replace('Hết hạn: e2W-Chì','Xe máy ắc quy chì hết hạn').replace('Hết hạn: Ô tô-Li','Ô tô pin Li hết hạn'));
+ Plotly.react('sankey',[{{type:'sankey',arrangement:'fixed',node:{{label:lab,x:d.nodes.map(n=>POS[n][0]),y:d.nodes.map(n=>POS[n][1]),color:d.nodes.map(n=>NC[n]),pad:18,thickness:16,line:{{width:0}}}},
+   link:{{source:d.links.map(l=>l.source),target:d.links.map(l=>l.target),value:d.links.map(l=>l.value/1000),
+   color:d.links.map(l=>hex2(NC[d.nodes[l.target]==='Phi chính thức / thất thoát'?d.nodes[l.target]:d.nodes[l.source]],0.35)),
+   hovertemplate:'%{{source.label}} → %{{target.label}}: %{{value:.1f}} nghìn tấn<extra></extra>'}}}}],{{paper_bgcolor:'#ffffff',font:{{color:'#0f1e2b',size:13}},margin:{{l:10,r:10,t:10,b:10}}}},{{displayModeBar:false,responsive:true}});
  const at=(o,y)=>o.p50[o.year.indexOf(y)]/1000, fmt=v=>v.toFixed(1).replace('.',','), c10=CROSS.find(r=>r.scenario===sc&&r.threshold_kt===10);
  document.getElementById('stats').innerHTML=`<div class="kpi"><b>${{fmt(at(f,2030))}} nghìn t</b><span>pin Li hết hạn năm 2030 (P50)</span></div><div class="kpi"><b>${{fmt(at(f,2035))}} nghìn t</b><span>pin Li hết hạn năm 2035 (P50)</span></div><div class="kpi"><b>${{c10.year_p10}}–${{c10.year_p90}}</b><span>năm vượt 10 nghìn tấn/năm (P10–P90)</span></div><div class="kpi"><b>${{fmt(at(FAN[sc]['Chì_eol_t'],2030))}} nghìn t</b><span>ắc quy chì hết hạn năm 2030 (P50)</span></div>`;
  document.getElementById('cross').innerHTML='<tr><th>Ngưỡng (nghìn tấn/năm)</th><th>Năm (likely)</th><th>P10–P90</th></tr>'+CROSS.filter(r=>r.scenario===sc).map(r=>`<tr><td>${{r.threshold_kt}}</td><td>${{r.year_likely}}</td><td>${{r.year_p10}}–${{r.year_p90}}</td></tr>`).join('');
