@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-20T06:48:07.017Z",
+ "run_at": "2026-10-20T06:57:22.763Z",
  "total": 73,
  "passed": 73,
  "results": [
@@ -12,7 +12,7 @@
    "expected": "Nhóm VN B.2.1; nhóm EU LMT",
    "result": "Đạt",
    "note": "",
-   "ms": 756
+   "ms": 3469
   },
   {
    "id": "TC-002",
@@ -23,7 +23,7 @@
    "expected": "B.1.1 Ắc quy chì; Pin xe điện (hạng L >25 kg)",
    "result": "Đạt",
    "note": "",
-   "ms": 654
+   "ms": 838
   },
   {
    "id": "TC-003",
@@ -34,7 +34,7 @@
    "expected": "25,0 → LMT; 25,1 → Pin xe điện (hạng L >25 kg)",
    "result": "Đạt",
    "note": "",
-   "ms": 934
+   "ms": 1750
   },
   {
    "id": "TC-004",
@@ -45,7 +45,7 @@
    "expected": "Không lưu; lỗi dưới trường hóa học và khối lượng",
    "result": "Đạt",
    "note": "",
-   "ms": 1743
+   "ms": 3591
   },
   {
    "id": "TC-005",
@@ -56,7 +56,7 @@
    "expected": "Hiển thị cả hai; cột chủ thể EPR = VELIX",
    "result": "Đạt",
    "note": "",
-   "ms": 844
+   "ms": 1513
   },
   {
    "id": "TC-006",
@@ -67,7 +67,7 @@
    "expected": "Pin Đang lưu hành, ngày 15/10/2026, mã VLX-LF48-26-NNNNNNN-C hợp lệ Luhn",
    "result": "Đạt",
    "note": "",
-   "ms": 1235
+   "ms": 1885
   },
   {
    "id": "TC-007",
@@ -78,7 +78,7 @@
    "expected": "Số thứ tự B = A + 1; A ≠ B; A vẫn tồn tại trạng thái Đã hủy đăng ký",
    "result": "Đạt",
    "note": "",
-   "ms": 1297
+   "ms": 1398
   },
   {
    "id": "TC-008",
@@ -89,7 +89,7 @@
    "expected": "0 mã trùng; 100% mã VLX hợp lệ Luhn",
    "result": "Đạt",
    "note": "",
-   "ms": 687
+   "ms": 649
   },
   {
    "id": "TC-009",
@@ -100,7 +100,7 @@
    "expected": "V giảm đúng 28 kg",
    "result": "Đạt",
    "note": "",
-   "ms": 812
+   "ms": 695
   },
   {
    "id": "TC-010",
@@ -111,7 +111,7 @@
    "expected": "V nhóm B.2.1 giảm đúng 11,5 kg",
    "result": "Đạt",
    "note": "",
-   "ms": 819
+   "ms": 707
   },
   {
    "id": "TC-011",
@@ -122,7 +122,7 @@
    "expected": "Mọi dòng thỏa cả hai điều kiện; bộ đếm khớp dữ liệu",
    "result": "Đạt",
    "note": "",
-   "ms": 687
+   "ms": 680
   },
   {
    "id": "TC-012",
@@ -133,7 +133,7 @@
    "expected": "Báo thiếu hồ sơ; P04 vẫn Chưa kích hoạt",
    "result": "Đạt",
    "note": "",
-   "ms": 674
+   "ms": 618
   },
   {
    "id": "TC-013",
@@ -144,7 +144,7 @@
    "expected": "P04 chuyển Hoạt động; nhật ký có thay đổi",
    "result": "Đạt",
    "note": "",
-   "ms": 1117
+   "ms": 1047
   },
   {
    "id": "TC-014",
@@ -155,7 +155,7 @@
    "expected": "Phiếu tạo; pin Đã thu hồi tại P01; phí 0; tồn kho P01 tăng đúng khối lượng",
    "result": "Đạt",
    "note": "",
-   "ms": 1179
+   "ms": 1105
   },
   {
    "id": "TC-015",
@@ -166,7 +166,7 @@
    "expected": "Mã TMP-P01-…; cờ Hãng khác; phiếu lưu",
    "result": "Đạt",
    "note": "",
-   "ms": 1183
+   "ms": 1102
   },
   {
    "id": "TC-016",
@@ -177,7 +177,7 @@
    "expected": "Thông báo điểm chưa kích hoạt; không có form",
    "result": "Đạt",
    "note": "",
-   "ms": 626
+   "ms": 622
   },
   {
    "id": "TC-017",
@@ -199,7 +199,7 @@
    "expected": "Số phiếu dạng P01-D1-NNNN; đúng 2 phiếu mới; không trùng",
    "result": "Đạt",
    "note": "",
-   "ms": 2434
+   "ms": 2061
   },
   {
    "id": "TC-019",
@@ -210,7 +210,7 @@
    "expected": "80,0% → có lý do Sức chứa; 79,x% → không",
    "result": "Đạt",
    "note": "",
-   "ms": 639
+   "ms": 634
   },
   {
    "id": "TC-020",
@@ -221,7 +221,7 @@
    "expected": "73 giờ → có lý do; 71 giờ → không",
    "result": "Đạt",
    "note": "",
-   "ms": 663
+   "ms": 639
   },
   {
    "id": "TC-021",
@@ -232,7 +232,7 @@
    "expected": "31 ngày → có lý do; 29 ngày → không",
    "result": "Đạt",
    "note": "",
-   "ms": 698
+   "ms": 589
   },
   {
    "id": "TC-022",
@@ -243,7 +243,7 @@
    "expected": "Lô GL-2026-NNNN; pin chuyển vị trí TT; lô Đã xác nhận cân",
    "result": "Đạt",
    "note": "",
-   "ms": 1864
+   "ms": 1655
   },
   {
    "id": "TC-023",
@@ -254,7 +254,7 @@
    "expected": "Chỉ điểm Hoạt động tại Hà Nội; có giờ mở cửa; không có tên/số điện thoại người trả pin",
    "result": "Đạt",
    "note": "",
-   "ms": 719
+   "ms": 714
   },
   {
    "id": "TC-024",
@@ -265,7 +265,7 @@
    "expected": "Hợp lệ — Mô hình; xác nhận được",
    "result": "Đạt",
    "note": "",
-   "ms": 1921
+   "ms": 2299
   },
   {
    "id": "TC-025",
@@ -276,7 +276,7 @@
    "expected": "Chờ đo tay — Thiếu dữ liệu BMS",
    "result": "Đạt",
    "note": "",
-   "ms": 1240
+   "ms": 1311
   },
   {
    "id": "TC-026",
@@ -287,7 +287,7 @@
    "expected": "Chờ đo tay — Khoảng tin cậy chứa ngưỡng",
    "result": "Đạt",
    "note": "",
-   "ms": 1217
+   "ms": 1307
   },
   {
    "id": "TC-027",
@@ -298,7 +298,7 @@
    "expected": "Chờ đo tay — Độ không chắc chắn cao",
    "result": "Đạt",
    "note": "",
-   "ms": 1234
+   "ms": 1296
   },
   {
    "id": "TC-028",
@@ -309,7 +309,7 @@
    "expected": "[80;90] → valid; [80;90,1] → manual",
    "result": "Đạt",
    "note": "",
-   "ms": 626
+   "ms": 690
   },
   {
    "id": "TC-029",
@@ -320,7 +320,7 @@
    "expected": "Pin Đã đánh giá; nguồn Đo tay; rời hàng chờ",
    "result": "Đạt",
    "note": "",
-   "ms": 1913
+   "ms": 2067
   },
   {
    "id": "TC-030",
@@ -331,7 +331,7 @@
    "expected": "Báo bắt buộc lý do; SoH không đổi",
    "result": "Đạt",
    "note": "",
-   "ms": 1673
+   "ms": 2056
   },
   {
    "id": "TC-031",
@@ -342,7 +342,7 @@
    "expected": "Nhật ký: người, thời điểm, 82 → 68, lý do; không có nút sửa/xóa",
    "result": "Đạt",
    "note": "",
-   "ms": 1716
+   "ms": 2726
   },
   {
    "id": "TC-032",
@@ -353,7 +353,7 @@
    "expected": "Đề xuất Đời thứ hai; nút Đời thứ hai bật",
    "result": "Đạt",
    "note": "",
-   "ms": 1142
+   "ms": 1841
   },
   {
    "id": "TC-033",
@@ -364,7 +364,7 @@
    "expected": "Đề xuất Tái chế; Đời thứ hai bị vô hiệu",
    "result": "Đạt",
    "note": "",
-   "ms": 1009
+   "ms": 1916
   },
   {
    "id": "TC-034",
@@ -375,7 +375,7 @@
    "expected": "70,0 → Đời thứ hai; 69,9 → Tái chế",
    "result": "Đạt",
    "note": "",
-   "ms": 611
+   "ms": 1311
   },
   {
    "id": "TC-035",
@@ -386,7 +386,7 @@
    "expected": "Đề xuất Tái chế; nút Đời thứ hai vô hiệu",
    "result": "Đạt",
    "note": "",
-   "ms": 652
+   "ms": 751
   },
   {
    "id": "TC-036",
@@ -397,7 +397,7 @@
    "expected": "Không có đề xuất; slAllowed = false; lý do cần hồ sơ SoH",
    "result": "Đạt",
    "note": "",
-   "ms": 722
+   "ms": 684
   },
   {
    "id": "TC-037",
@@ -408,7 +408,7 @@
    "expected": "Báo người duyệt phải khác người đề xuất; trạng thái không đổi",
    "result": "Đạt",
    "note": "",
-   "ms": 1491
+   "ms": 1595
   },
   {
    "id": "TC-038",
@@ -419,7 +419,7 @@
    "expected": "Pin trạng thái Đời thứ hai; nhật ký approve",
    "result": "Đạt",
    "note": "",
-   "ms": 1730
+   "ms": 2077
   },
   {
    "id": "TC-039",
@@ -430,7 +430,7 @@
    "expected": "Báo cần số hợp đồng/hóa đơn",
    "result": "Đạt",
    "note": "",
-   "ms": 1862
+   "ms": 1920
   },
   {
    "id": "TC-040",
@@ -441,7 +441,7 @@
    "expected": "Gốc Đã bàn giao; hồ sơ mới repurposed, parent = gốc, chủ thể S01; liên kết hiển thị",
    "result": "Đạt",
    "note": "",
-   "ms": 1778
+   "ms": 2256
   },
   {
    "id": "TC-041",
@@ -452,7 +452,7 @@
    "expected": "Chặn; báo giấy phép hết hạn",
    "result": "Đạt",
    "note": "",
-   "ms": 726
+   "ms": 845
   },
   {
    "id": "TC-042",
@@ -463,7 +463,7 @@
    "expected": "Chặn; báo nhóm B.2.1 không có trong giấy phép",
    "result": "Đạt",
    "note": "",
-   "ms": 720
+   "ms": 788
   },
   {
    "id": "TC-043",
@@ -474,7 +474,7 @@
    "expected": "R01 Sắp hết hạn; 60 ngày → Sắp hết hạn; 61 ngày → Hợp lệ; R03 Hết hạn",
    "result": "Đạt",
    "note": "",
-   "ms": 680
+   "ms": 828
   },
   {
    "id": "TC-044",
@@ -485,7 +485,7 @@
    "expected": "Số CT-2026-NNNN tăng liên tục; tổng gửi = tổng khối lượng pin; pin Đã bàn giao",
    "result": "Đạt",
    "note": "",
-   "ms": 1545
+   "ms": 1522
   },
   {
    "id": "TC-045",
@@ -496,7 +496,7 @@
    "expected": "Xác nhận thành công; không yêu cầu lý do",
    "result": "Đạt",
    "note": "",
-   "ms": 1759
+   "ms": 1589
   },
   {
    "id": "TC-046",
@@ -507,7 +507,7 @@
    "expected": "2,00% → needReason false; 2,01% → true",
    "result": "Đạt",
    "note": "",
-   "ms": 794
+   "ms": 681
   },
   {
    "id": "TC-047",
@@ -518,7 +518,7 @@
    "expected": "Lần 1: yêu cầu lý do; lần 2: xác nhận và có thông báo cho Tuân thủ trên Tổng quan",
    "result": "Đạt",
    "note": "",
-   "ms": 1473
+   "ms": 1340
   },
   {
    "id": "TC-048",
@@ -529,7 +529,7 @@
    "expected": "Pin Đã tái chế; nhãn Hồ sơ đã đóng, không nút sửa; kết quả B.1.1 tăng",
    "result": "Đạt",
    "note": "",
-   "ms": 1628
+   "ms": 1374
   },
   {
    "id": "TC-049",
@@ -540,7 +540,7 @@
    "expected": "F = R × V × 20000; nhật ký có Fs 18278 → 20000",
    "result": "Đạt",
    "note": "",
-   "ms": 1397
+   "ms": 1175
   },
   {
    "id": "TC-050",
@@ -551,7 +551,7 @@
    "expected": "Căn cứ NĐ 08/2022; cảnh báo chưa nạp tham số; không có R, F",
    "result": "Đạt",
    "note": "",
-   "ms": 760
+   "ms": 674
   },
   {
    "id": "TC-051",
@@ -562,7 +562,7 @@
    "expected": "Trước: không đề xuất Sức chứa; sau: có",
    "result": "Đạt",
    "note": "",
-   "ms": 972
+   "ms": 810
   },
   {
    "id": "TC-052",
@@ -573,7 +573,7 @@
    "expected": "Hình thức không hợp lệ bị từ chối; ô chọn là danh sách đơn",
    "result": "Đạt",
    "note": "",
-   "ms": 788
+   "ms": 608
   },
   {
    "id": "TC-053",
@@ -584,7 +584,7 @@
    "expected": "Không lưu; báo chọn cách thức",
    "result": "Đạt",
    "note": "",
-   "ms": 1251
+   "ms": 681
   },
   {
    "id": "TC-054",
@@ -595,7 +595,7 @@
    "expected": "Bằng nhau (làm tròn 0,1 kg)",
    "result": "Đạt",
    "note": "",
-   "ms": 775
+   "ms": 590
   },
   {
    "id": "TC-055",
@@ -606,7 +606,7 @@
    "expected": "F = round(0,12 × V × 18.278)",
    "result": "Đạt",
    "note": "",
-   "ms": 937
+   "ms": 722
   },
   {
    "id": "TC-056",
@@ -617,7 +617,7 @@
    "expected": "Bảo lưu = kết quả − R × V > 0",
    "result": "Đạt",
    "note": "",
-   "ms": 845
+   "ms": 738
   },
   {
    "id": "TC-057",
@@ -628,7 +628,7 @@
    "expected": "Phải tái chế 0; F 0 đ; V > 0",
    "result": "Đạt",
    "note": "",
-   "ms": 916
+   "ms": 660
   },
   {
    "id": "TC-058",
@@ -639,7 +639,7 @@
    "expected": "Hạn 01/04/2027 và 20/04/2027; nhắc khi còn 30, 7, 1; không nhắc khi còn 2",
    "result": "Đạt",
    "note": "",
-   "ms": 1122
+   "ms": 793
   },
   {
    "id": "TC-059",
@@ -650,7 +650,7 @@
    "expected": "Tệp có cột năm, nhóm, hình thức, cách thức, V, R, phải tái chế, kết quả, bảo lưu, Fs, F, căn cứ; 2 dòng dữ liệu",
    "result": "Đạt",
    "note": "",
-   "ms": 976
+   "ms": 703
   },
   {
    "id": "TC-060",
@@ -661,7 +661,7 @@
    "expected": "Giá trị hiển thị khớp; có dòng công thức",
    "result": "Đạt",
    "note": "",
-   "ms": 855
+   "ms": 631
   },
   {
    "id": "TC-061",
@@ -672,7 +672,7 @@
    "expected": "Trả ok = false khi một trong ba năm bằng 0",
    "result": "Đạt",
    "note": "",
-   "ms": 798
+   "ms": 611
   },
   {
    "id": "TC-062",
@@ -683,7 +683,7 @@
    "expected": "Có mã, model, hóa học, khối lượng, nhóm VN/EU, ngày, SoH 82%, passport waste; dòng thời gian theo ngày tăng dần",
    "result": "Đạt",
    "note": "",
-   "ms": 1753
+   "ms": 1446
   },
   {
    "id": "TC-063",
@@ -694,7 +694,7 @@
    "expected": "Báo không cho phép; trạng thái không đổi",
    "result": "Đạt",
    "note": "",
-   "ms": 1211
+   "ms": 1023
   },
   {
    "id": "TC-064",
@@ -705,7 +705,7 @@
    "expected": "Chỉ đúng 8 chuyển hợp lệ theo vòng đời (gồm Hủy đăng ký) được chấp nhận; 56 cặp còn lại bị từ chối",
    "result": "Đạt",
    "note": "",
-   "ms": 702
+   "ms": 703
   },
   {
    "id": "TC-065",
@@ -716,7 +716,7 @@
    "expected": "Mọi phiếu trong bảng thuộc P01",
    "result": "Đạt",
    "note": "",
-   "ms": 825
+   "ms": 632
   },
   {
    "id": "TC-066",
@@ -727,7 +727,7 @@
    "expected": "Mọi lô hiển thị có đơn vị nhận R01; không thấy lô GL",
    "result": "Đạt",
    "note": "",
-   "ms": 1111
+   "ms": 925
   },
   {
    "id": "TC-067",
@@ -738,7 +738,7 @@
    "expected": "Menu không có Báo cáo EPR; trang báo không có quyền",
    "result": "Đạt",
    "note": "",
-   "ms": 894
+   "ms": 652
   },
   {
    "id": "TC-068",
@@ -749,7 +749,7 @@
    "expected": "0 kết quả; pin tenant DEMO2 không vào V",
    "result": "Đạt",
    "note": "",
-   "ms": 1177
+   "ms": 628
   },
   {
    "id": "TC-069",
@@ -760,7 +760,7 @@
    "expected": "Có thời điểm, người, đối tượng, trường, cũ, mới; không nút sửa/xóa",
    "result": "Đạt",
    "note": "",
-   "ms": 779
+   "ms": 783
   },
   {
    "id": "TC-070",
@@ -771,7 +771,7 @@
    "expected": "scrollWidth ≤ 360; nút Lưu phiếu hiển thị",
    "result": "Đạt",
    "note": "",
-   "ms": 983
+   "ms": 694
   },
   {
    "id": "TC-071",
@@ -782,7 +782,7 @@
    "expected": "≤ 2 trường bắt buộc (mã pin, khối lượng) + 1 lần bấm Lưu",
    "result": "Đạt",
    "note": "",
-   "ms": 914
+   "ms": 925
   },
   {
    "id": "TC-072",
@@ -793,7 +793,7 @@
    "expected": "Ô R, Fs bị khóa với Quản trị; tham số vận hành vẫn sửa được",
    "result": "Đạt",
    "note": "",
-   "ms": 764
+   "ms": 589
   },
   {
    "id": "TC-073",
@@ -804,7 +804,7 @@
    "expected": "Ẩn khi chưa tick; hiện khi tick",
    "result": "Đạt",
    "note": "",
-   "ms": 796
+   "ms": 661
   }
  ]
 }
